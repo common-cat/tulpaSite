@@ -1,0 +1,35 @@
+#search{
+    position: relative;
+    left: 10%;
+    width: 40%;
+    height: 50px;
+    font-size: 20pt;
+    border-radius: 5px;
+    color: rgb(109, 109, 109);
+    box-sizing: border-box;
+    border: 2px solid rgb(92, 92, 92);
+    background-color: rgb(222, 222, 222);
+    padding: 5px;
+}
+.item{
+    box-sizing: border-box;
+    margin-top: 20px;
+    white-space:normal;
+    word-break: break-all;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: rgb(251, 255, 134);
+    padding: 5px;
+    max-width: 40%;
+    margin-left: 10%;
+    padding: 5px;
+    font-size:20pt;
+    color: rgb(109, 109, 109);
+}
+.baritem{
+    background-color:rgb(196, 196, 196);
+    border-radius: 5px;
+    padding:5px;
+    margin: 10px;
+    display: inline-block;
+}

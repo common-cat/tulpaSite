@@ -1,0 +1,10 @@
+server:
+  port: 6001 #该 Module 的端口号
+eureka:
+  instance:
+    hostname: localhost #eureka服务端的实例名称，
+  client:
+    register-with-eureka: false #false表示不向注册中心注册自己。
+    fetch-registry: false #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      defaultZone: http://localhost:6001/eureka/ #单机版服务注册中心

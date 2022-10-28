@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--导入thymeleaf的名称空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TULPA花名册</title>
+    <link th:href="@{src/css/main.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{src/css/index.css}" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <script src="/src/js/vue_.js"></script>
+    <script src="/src/js/login.js"></script>
+    <script src="/src/js/main.js"></script>
+    <header>
+        <div id="header">
+            <div id="user" :class="{display: hidden}">
+                <img class="userIcon" id="headIcon" v-bind:src="imgSrc">
+            </div>
+            <div id="login" class="button" @click="login">
+                登录
+            </div>
+            <div id="signin" class="button" @click="signin">
+                注册
+            </div>
+            <div id="logout" class="button" @click="logout">
+                登出
+            </div>
+            <div id="connecting" class="button" @click="connecting">
+                联系开发者
+            </div>
+            <div class="vue" id="logout_" @click="logout">
+
+            </div>
+        </div>
+    </header>
+    <script>
+        window.onblur=function(){
+            loginbyToken(getCookie("token"));
+        }
+    </script>
+    <script>
+        var headerApp=Vue.createApp(
+            {
+                data(){
+                    return{
+                        imgSrc:"",
+                        isLogin:false,
+                        hidden:true
+                    }
+                },
+                methods:{
+                    login(){
+                        window.open("static/login");
+                    },
+                    signin(){
+                        window.open("static/signin");
+                    },
+                    logout(){
+                        delCookie("token");
+                        delCookie("userName");
+                        hidden=true;
+                        isLogin=false;
+                    },
+                    connecting(){
+                        
+                    }
+                }
+            }
+        );
+        headerApp.mount("#header");
+    </script>
+    <h1 class="title" id="mainTitle">
+        TULPA花名册
+    </h1>
+    <div class="contents" id="searchBind">
+        <input id="search" v-model="searchdata" type="text" @input="searchdatachanged()" @keyup.enter.native="search()">
+    </div>
+    <div class="contents" id="newPages">
+        <h3>最新页面</h3>
+        <div class="contents"></div>
+    </div>
+    <div class="contents" id="hotPages">
+        <h3>随机页面</h3>
+        <div class="contents"></div>
+    </div>
+    <div id="create" class="button" >
+
+        <div @click="create_">点击这里创建你自己的页面!</div>
+    </div>
+    <script>
+        var ajax = new XMLHttpRequest()
+        var app = Vue.createApp(
+            {
+                data() {
+                    return {
+                        searchdata: "",
+                    }
+                },
+                methods: {
+                    search() {
+                        window.location.href = "http://" + window.location.host + "/static/search" + "?" + "q=" + this.searchdata;
+                    }
+                    //上传搜索的内容
+                }
+            }
+        );
+        app.mount("#searchBind");
+        var app1 = Vue.createApp(
+            {
+                methods: {
+                    data(){
+                        return{
+
+                        }
+                    },
+                    create_() {
+                        alert("创建页面");
+                        window.open("/static/create");
+                    }
+                }
+            }
+        );
+        app1.mount("#create");
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+#mainTitle{
+    font-size:80pt;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(124, 124, 124);
+    font-family: "jgt";
+}
+.title_{
+    font-size: 20pt;
+    color:  rgb(109, 109, 109);
+    text-shadow: 1px 1px 2px rgb(37, 37, 37);
+}
+#search{
+    position: relative;
+    left: 10%;
+    width: 80%;
+    height: 80px;
+    font-size: 35pt;
+    border-radius: 5px;
+    color: rgb(109, 109, 109);
+    box-sizing: border-box;
+    border: 2px solid rgb(92, 92, 92);
+    background-color: rgb(222, 222, 222);
+    padding: 5px;
+}
+#newPages{
+    position: relative;
+    margin-top: 100px;
+    left: 2.5%;
+    width: 95%;
+    right: 2.5%;
+}
+#hotPages{
+    position: relative;
+    margin-top: 20px;
+    left: 2.5%;
+    width: 95%;
+    right: 2.5%;
+}
+
+.item{
+    margin-top: 10px;
+    white-space:normal;
+    word-break: break-all;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: rgb(251, 255, 134);
+    padding: 5px;
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 5px;
+    font-size:35pt;
+    color: rgb(109, 109, 109);
+}
+#create{
+    margin-top: 20px;
+    margin-left: 2.5%;
+    font-size: 30pt;
+    background-color: rgb(148, 255, 207);
+    color: whitesmoke;
+}

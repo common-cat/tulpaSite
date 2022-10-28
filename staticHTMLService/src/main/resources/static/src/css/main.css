@@ -1,0 +1,54 @@
+.contents{
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+}
+.title{
+    color: rgb(75, 171, 255);
+}
+.data{
+    display:none;
+}
+.vue{
+    display: none;
+}
+body{
+    color: rgb(109, 109, 109);
+    font-family: "OPPOSans";
+    background-color: whitesmoke;
+}
+@font-face {
+    font-family: "OPPOSans";
+    src: url("/src/font/opposans.ttf");
+}
+@font-face {
+    font-family: "jgt";
+    src: url("/src/font/ChuangKeTieJinGangTi.otf");
+}
+.button{
+    background-color:rgb(115, 229, 255);
+    border-radius: 5px;
+    padding:5px;
+    margin: 10px;
+    display: inline-block;
+}
+#header{
+    background-color: white;
+    border-radius: 5px;
+    position:relative;
+    height:50px;
+}
+#user{
+    display: none;
+}
+.input{
+    margin-top: 50px;
+    width: 80%;
+    margin-left: 10%;
+    height: 50px;
+    font-size: 25pt;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    color: rgb(109, 109, 109);
+}

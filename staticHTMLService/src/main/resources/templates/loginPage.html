@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>登录</title>
+    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/src/css/login.css}" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <script src="/src/js/vue_.js"></script>
+    <script src="/src/js/login.js"></script>
+    <script src="/src/js/main.js"></script>
+    <div id="login">
+        <form>
+            <input type="text" name="user" v-model="user" class="input">
+            <input type="password" name="pwd" v-model="pwd" class="input">
+        </form>
+        <div class="button_" @click="login()">登录</div>
+        <div class="button_" @click="signin()">注册</div>
+        <div class="button_" @click="forgetPWD()">忘记密码</div>
+    </div>
+            <script>
+            var app = Vue.createApp(
+                {
+                    data() {
+                        return {
+                            user:"",
+                            pwd: ""
+                        }
+                    },
+                    methods: {
+                        login() {
+                            var user = this.user;
+                            var pwd = this.pwd;
+                            var method = "";
+                            var m=user.match("0?(13|14|15|18|17)[0-9]{9}")
+                            //是否是电话号码
+                            if(m!=null){
+                                method="phone";
+                            }
+                            m=user.match("[0-9]{14}")
+                            if(m!=null){
+                                method="id";
+                            }
+                            //14位ID
+                            m=user.match("\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}")
+                            if(m!=null){
+                                method="email";
+                            }
+                            if(method==""){
+                                method="name";
+                            }
+                            ajax = new XMLHttpRequest();
+                            ajax.open("POST","/login");
+                            ajax.send("user="+user+"&pwd="+pwd+"&method="+method);
+                            alert(user);
+                        }
+                        ,
+                        signin() {
+                            window.open("/static/signin");
+                        }
+                        ,
+                        forgetPWD() {
+                            window.open("/static/forget");
+                        }
+                    }
+                }
+            )
+            app.mount("#login");
+        </script>
+</body>
+
+</html>

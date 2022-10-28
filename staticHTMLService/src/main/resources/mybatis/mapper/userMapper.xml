@@ -1,0 +1,10 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.lplatform">
+    <select id="selectUser" resultType="wiki.lplatform.domain.user.User">
+        select id,name,gender,grade,pwdHash,description,headPortraitURL from users where id=#{id}
+    </select>
+
+</mapper>
