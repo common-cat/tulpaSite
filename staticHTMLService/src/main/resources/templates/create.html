@@ -48,7 +48,29 @@
             }
         }
         editorConfig.MENU_CONF['uploadImage'] = {
-            server: '/api/upload/image'
+            async customUpload(file, insertFn) {
+                var ajax = new XMLHttpRequest();
+                ajax.open('POST','/edit/upload-image');
+                var image = '';
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function (ev) {
+                    image = ev.target.result;
+                    upload_image = {
+                        image: image,
+                        name: file.name
+                    }
+                    ajax.onreadystatechange = function () {
+                        if(ajax.readyState==4){
+                            re=JSON.parse(ajax.responseText);
+                            insertFn(re.data.url, re.data.alt, "");
+                        }
+                    }
+                    //TODO
+                    ajax.send(upload_image);
+
+                }
+            }
         }
         const editor = createEditor({
             selector: '#editor-container',

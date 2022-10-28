@@ -1,0 +1,21 @@
+server:
+  port: 8005
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:6001/eureka/
+    fetch-registry: true
+spring:
+  jwt:
+  #  JWT存储请求头
+    tokenHeader: Authorization
+  #  JWT加密使用的密钥
+    secret: token_secret
+    expiration: 604800
+  #  JWT负载中拿到开头
+    tokenHead: Bearer
+  application:
+    name: tokenService
+

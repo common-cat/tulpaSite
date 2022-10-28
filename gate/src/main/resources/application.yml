@@ -23,6 +23,18 @@ spring:
           uri: lb://STATICHTMLSERVICE
           predicates:
             - Path=/src/**
+        - id: token
+          uri: lb://TOKENSERVICE
+          predicates:
+            - Path=/token/**
+        - id: edit
+          uri: lb://EDITSERVICE
+          predicates:
+            - Path=/edit/**
+        - id: source
+          uri: lb://SOURCESERVICE
+          predicates:
+            - Path=/source/**
 eureka:
   instance:
     instance-id: gate

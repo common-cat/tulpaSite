@@ -3,10 +3,10 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/AdminService/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AdminService/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/EditService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PageService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/editService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gate/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
@@ -14,10 +14,14 @@
     <file url="file://$PROJECT_DIR$/logService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mainPageService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/searchService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/signService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sourceService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/staticHTMLService/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/staticHTMLService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tokenServcie/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tokenService/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tokenService/src/main/java" charset="UTF-8" />
   </component>
 </project>

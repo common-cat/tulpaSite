@@ -9,13 +9,15 @@
         <module>eureka</module>
         <module>gate</module>
         <module>staticHTMLService</module>
-        <module>tokenServcie</module>
+        <module>tokenService</module>
         <module>logService</module>
         <module>signService</module>
         <module>mainPageService</module>
         <module>PageService</module>
-        <module>EditService</module>
+        <module>editService</module>
         <module>AdminService</module>
+        <module>searchService</module>
+        <module>sourceService</module>
     </modules>
     <dependencies>
         <dependency>
