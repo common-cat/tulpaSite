@@ -5,46 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335e7224-8262-4952-a506-1661a3709458" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editService/src/main/java/wiki/editService/EditServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editService/src/main/java/wiki/editService/controller/EditServiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editService/src/main/java/wiki/editService/mapper/SourceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editService/src/main/java/wiki/editService/service/ImageDatabaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editService/src/main/java/wiki/editService/service/ImageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editService/src/main/java/wiki/editService/service/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editService/src/main/java/wiki/editService/service/impl/CommonImageDatabaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editService/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/SourceServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/controller/SourceServiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/entities/Doc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/entities/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/entities/Music.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/mapper/SourceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/service/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sourceService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokenService/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokenService/src/main/java/wiki/common_cat/tokenService/TokenServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokenService/src/main/java/wiki/common_cat/tokenService/controller/ServiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokenService/src/main/java/wiki/common_cat/tokenService/service/TokenMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokenService/src/main/java/wiki/common_cat/tokenService/service/TokenUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokenService/src/main/java/wiki/common_cat/tokenService/service/TokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokenService/src/main/java/wiki/common_cat/tokenService/service/impl/CommonTokenMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokenService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/service/SourceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/service/impl/CommonSourceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EditService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/editService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gate/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gate/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/mybatis/mapper/pageMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/mybatis/mapper/userMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/mybatis/mybatis.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenServcie/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/searchService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/controller/SourceServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/controller/SourceServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/entities/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/entities/Music.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/mapper/SourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/mapper/SourceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourceService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,18 +53,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/Acer/Desktop/tulpasite/TulpaSite/sourceService/src/main/resources",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Desktop/tulpasite/TulpaSite/sourceService/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\sourceService\src\main\resources" />

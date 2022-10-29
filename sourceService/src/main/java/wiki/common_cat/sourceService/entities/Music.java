@@ -3,7 +3,6 @@ package wiki.common_cat.sourceService.entities;
 public class Music {
     public String musicID;
     //MusicID
-    public String name;
     //名称
     public String base64;
     //内容
@@ -17,14 +16,6 @@ public class Music {
 
     public void setMusicID(String musicID) {
         this.musicID = musicID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getBase64() {

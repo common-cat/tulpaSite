@@ -8,7 +8,6 @@ import wiki.common_cat.sourceService.entities.Music;
 @Mapper
 public interface SourceMapper {
     Doc getDoc(String authorID);
-
     Image getImage(String authorID, String imageID);
     Music getMusic(String authorID,String musicID);
     void setDoc(String authorID,Doc doc);

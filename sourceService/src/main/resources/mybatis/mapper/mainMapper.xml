@@ -4,7 +4,7 @@
 
 <mapper namespace="wiki.common_cat">
     <select id="getDoc" resultType="wiki.common_cat.sourceService.entities.Doc">
-
+        select * from
     </select>
     <select id="getImage" resultType="wiki.common_cat.sourceService.entities.Image">
 
