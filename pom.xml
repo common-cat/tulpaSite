@@ -14,10 +14,10 @@
         <module>signService</module>
         <module>mainPageService</module>
         <module>PageService</module>
-        <module>editService</module>
         <module>AdminService</module>
         <module>searchService</module>
         <module>sourceService</module>
+        <module>auditService</module>
     </modules>
     <dependencies>
         <dependency>

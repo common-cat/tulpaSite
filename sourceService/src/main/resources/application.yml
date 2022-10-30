@@ -23,7 +23,7 @@ spring:
 ###################################### MyBatis 配置 ######################################
 mybatis:
   # 指定 mapper.xml 的位置
-  mapper-locations: classpath:mybatis/mapper/*.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
   #扫描实体类的位置,在此处指明扫描实体类的包，在 mapper.xml 中就可以不写实体类的全路径名
   type-aliases-package: wiki.common_cat.sourceService.entities
   configuration:

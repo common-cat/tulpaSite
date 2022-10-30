@@ -3,17 +3,16 @@ package wiki.common_cat.sourceService.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import wiki.common_cat.sourceService.entities.Doc;
 import wiki.common_cat.sourceService.entities.Image;
-import wiki.common_cat.sourceService.entities.Music;
 
 @Mapper
 public interface SourceMapper {
     Doc getDoc(String authorID);
-    Image getImage(String authorID, String imageID);
-    Music getMusic(String authorID,String musicID);
-    void setDoc(String authorID,Doc doc);
+    Image getImage(String imageID);
+    String imageExist(int hash);
+    void setDoc(String HTML,String authorID,String date,int status);
     void deleteDoc(String authorID);
-    void setImage(String authorID,Image image);
+    void setImage(String imageID,byte[] file,String date,int hash);
     void deleteImage(String authorID,String image);
-    void setMusic(String authorID,Music music);
-    void deleteMusic(String authorID,String music);
+    String docExist(String authorID);
+    void updateDoc(String HTML,String authorID,String date,int status);
 }

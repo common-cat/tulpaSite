@@ -11,6 +11,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/editService/pom.xml" />
         <option value="$PROJECT_DIR$/tokenServcie/pom.xml" />
       </set>
     </option>

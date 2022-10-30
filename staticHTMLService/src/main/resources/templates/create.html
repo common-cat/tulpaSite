@@ -4,22 +4,9 @@
     <title>创作你的花名册</title>
     <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
     <link th:href="@{/src/css/login.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/src/css/create.css}" type="text/css" rel="stylesheet">
     <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
-    <style>
-        #editor—wrapper {
-            border: 1px solid #ccc;
-            z-index: 100;
-            /* 按需定义 */
-        }
 
-        #toolbar-container {
-            border-bottom: 1px solid #ccc;
-        }
-
-        #editor-container {
-            height: 500px;
-        }
-    </style>
 </head>
 
 <body>
@@ -33,6 +20,11 @@
         <div id="editor-container">
             <!-- 编辑器 -->
         </div>
+    </div>
+    <div id="sub">
+        <div class="button" id="submit" @click="submit">发布</div>
+        <div class="button" id="save" @click="save">保存</div>
+        <div class="button" id="auto-save" @click="autosave">{{autosavetext}}</div>
     </div>
     <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
     <script>
@@ -50,25 +42,20 @@
         editorConfig.MENU_CONF['uploadImage'] = {
             async customUpload(file, insertFn) {
                 var ajax = new XMLHttpRequest();
-                ajax.open('POST','/edit/upload-image');
+                ajax.open('POST', '/source/upload-image', true);
                 var image = '';
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onload = function (ev) {
-                    image = ev.target.result;
-                    upload_image = {
-                        image: image,
-                        name: file.name
-                    }
+                    image = ev.target.result.split(",")[1];
                     ajax.onreadystatechange = function () {
-                        if(ajax.readyState==4){
-                            re=JSON.parse(ajax.responseText);
-                            insertFn(re.data.url, re.data.alt, "");
+                        if (ajax.readyState == 4) {
+                            insertFn(ajax.responseText, "", "");
                         }
                     }
                     //TODO
-                    ajax.send(upload_image);
-
+                    ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    ajax.send('token=' + '&image=' + image);
                 }
             }
         }
@@ -87,8 +74,55 @@
             config: toolbarConfig,
             mode: 'default', // or 'simple'
         })
-        console.log(editorConfig)
-        console.log(editor.getMenuConfig('uploadImage'))
+        var app = Vue.createApp(
+            {
+                data() {
+                    return {
+                        isautosave: true,
+                        autosavetext: "开启自动保存"
+                    }
+                },
+                methods: {
+                    submit() {
+
+                    },
+                    save() {
+                        var ajax = new XMLHttpRequest();
+                        ajax.open('POST', '/source/upload-doc', true);
+                        ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                        ajax.onreadystatechange = function () {
+                            if (ajax.readyState == 4) {
+                                alert("已保存！")
+                            }
+                        }
+                        ajax.send("html=" + editor.getHtml());
+                    },
+                    autosave() {
+                        isautosave = !isautosave;
+                        if (this.isautosave) {
+                            this.autosavetext = "开启自动保存";
+                        } else {
+                            this.autosavetext = "关闭自动保存";
+                        }
+                    }
+                }
+            }
+        );
+        app.mount("#sub");
+        function download() {
+            var ajax = new XMLHttpRequest();
+            ajax.open('GET', '/source/doc/' + "0", true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                    doc=JSON.parse(ajax.responseText);
+                    editor.setHtml(doc.HTML);
+                }
+            }
+            //TODO
+            ajax.send();
+        }
+        download();
+
     </script>
 </body>
 

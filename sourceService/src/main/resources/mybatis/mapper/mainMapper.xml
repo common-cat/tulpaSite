@@ -2,32 +2,32 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="wiki.common_cat">
+<mapper namespace="wiki.common_cat.sourceService.mapper.SourceMapper">
     <select id="getDoc" resultType="wiki.common_cat.sourceService.entities.Doc">
-        select * from
+        select * from doc where authorID=#{authorID}
+    </select>
+    <select id="imageExist" resultType="string">
+        select imageID from images where hash=#{hash}
     </select>
     <select id="getImage" resultType="wiki.common_cat.sourceService.entities.Image">
-
+        select * from images where imageID=#{imageID}
     </select>
-    <select id="getMusic" resultType="wiki.common_cat.sourceService.entities.Image">
-
+    <select id="docExist" resultType="string">
+        select authorID from doc where authorID=#{authorID}
     </select>
-    <sql id="setDoc">
-
-    </sql>
+    <insert id="setDoc">
+        insert into doc (HTML,authorID,date,status) values (#{HTML},#{authorID},#{date},#{status})
+    </insert>
+    <update id="updateDoc">
+        update doc set HTML=#{HTML},authorID=#{authorID},date=#{date},status=#{status} where authorID=#{authorID}
+    </update>
     <sql id="deleteDoc">
 
     </sql>
-    <sql id="setImage">
-
-    </sql>
+    <insert id="setImage">
+        insert into images (imageID,file,date,hash) values (#{imageID},#{file},#{date},#{hash})
+    </insert>
     <sql id="deleteImage">
-
-    </sql>
-    <sql id="setMusic">
-
-    </sql>
-    <sql id="deleteMusic">
 
     </sql>
 </mapper>
