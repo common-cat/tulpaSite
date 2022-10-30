@@ -35,6 +35,10 @@ spring:
           uri: lb://SOURCESERVICE
           predicates:
             - Path=/source/**
+        - id: login
+          uri: lb://LOGSERVICE
+          predicates:
+            - Path=/login/**
 eureka:
   instance:
     instance-id: gate

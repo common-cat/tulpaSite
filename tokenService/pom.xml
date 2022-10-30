@@ -88,12 +88,6 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.5.9</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
@@ -133,11 +127,6 @@
         </dependency>
         <!--整合 mybatis -->
         <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.2.2</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>springloaded</artifactId>
             <version>1.2.8.RELEASE</version>
@@ -160,30 +149,6 @@
     <build>
         <plugins>
             <!--mybatis自动生成代码插件-->
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.4.0</version>
-                <configuration>
-                    <configurationFile>src/main/resources/mybatis-generator/generatorConfig.xml</configurationFile>
-                    <verbose>true</verbose>
-                    <!-- 是否覆盖，true表示会替换生成的JAVA文件，false则不覆盖 -->
-                    <overwrite>true</overwrite>
-                </configuration>
-                <dependencies>
-                    <!--mysql驱动包-->
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.49</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.mybatis.generator</groupId>
-                        <artifactId>mybatis-generator-core</artifactId>
-                        <version>1.4.0</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

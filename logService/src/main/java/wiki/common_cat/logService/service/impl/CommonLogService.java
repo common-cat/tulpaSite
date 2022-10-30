@@ -18,6 +18,7 @@ public class CommonLogService implements LogService {
     @Override
     public String logByID(String id, String pwd) {
         User user=mapper.getUserByID(id);
+        System.out.println("id:"+id);
         if(!user.tryRightTimes()){
             mapper.setUser(user.getLastLoginDate(), user.getStatus(),user.getLoginTimes(),user.getId());
             return "wrongTimes";

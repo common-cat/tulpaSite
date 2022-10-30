@@ -19,6 +19,7 @@ public class TokenServiceController {
         String id= httpServletRequest.getParameter("id");
         String pwd=httpServletRequest.getParameter("pwd");
         String isAccountNonExpired=httpServletRequest.getParameter("isAccountNonExpired");
+        System.out.println("token:"+id+" "+pwd);
         return tokenMap.getToken(id,pwd,Boolean.valueOf(isAccountNonExpired));
     }
     @PostMapping("/token/updateToken/{token}")

@@ -4,6 +4,6 @@
 
 <mapper namespace="wiki.common_cat.tokenService.mapper.TokenMapper">
     <select id="getUser" resultType="wiki.common_cat.logService.entities.User">
-        select * from user where id=#{id}
+        select * from users where id=#{id}
     </select>
 </mapper>

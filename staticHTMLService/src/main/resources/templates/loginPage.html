@@ -19,55 +19,46 @@
         <div class="button_" @click="signin()">注册</div>
         <div class="button_" @click="forgetPWD()">忘记密码</div>
     </div>
-            <script>
-            var app = Vue.createApp(
-                {
-                    data() {
-                        return {
-                            user:"",
-                            pwd: ""
+    <script>
+        var app = Vue.createApp(
+            {
+                data() {
+                    return {
+                        user: "",
+                        pwd: ""
+                    }
+                },
+                methods: {
+                    login() {
+                        ajax=new XMLHttpRequest();
+                        var user = this.user;
+                        var pwd = this.pwd;
+                        //14位ID
+                        m = user.match("\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}")
+                        if (m != null) {
+                            ajax.open("POST", "/login/email");
+                            ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                            ajax.send("user=" + user + "&pwd=" + pwd);
+                        }else{
+                            ajax.open("POST", "/login/id");
+                            ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                            ajax.send("user=" + user + "&pwd=" + pwd);
                         }
-                    },
-                    methods: {
-                        login() {
-                            var user = this.user;
-                            var pwd = this.pwd;
-                            var method = "";
-                            var m=user.match("0?(13|14|15|18|17)[0-9]{9}")
-                            //是否是电话号码
-                            if(m!=null){
-                                method="phone";
-                            }
-                            m=user.match("[0-9]{14}")
-                            if(m!=null){
-                                method="id";
-                            }
-                            //14位ID
-                            m=user.match("\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}")
-                            if(m!=null){
-                                method="email";
-                            }
-                            if(method==""){
-                                method="name";
-                            }
-                            ajax = new XMLHttpRequest();
-                            ajax.open("POST","/login");
-                            ajax.send("user="+user+"&pwd="+pwd+"&method="+method);
-                            alert(user);
-                        }
-                        ,
-                        signin() {
-                            window.open("/static/signin");
-                        }
-                        ,
-                        forgetPWD() {
-                            window.open("/static/forget");
-                        }
+                        ajax = new XMLHttpRequest();
+                    }
+                    ,
+                    signin() {
+                        window.open("/static/signin");
+                    }
+                    ,
+                    forgetPWD() {
+                        window.open("/static/forget");
                     }
                 }
-            )
-            app.mount("#login");
-        </script>
+            }
+        )
+        app.mount("#login");
+    </script>
 </body>
 
 </html>

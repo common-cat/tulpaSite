@@ -13,13 +13,13 @@ public class LogServiceController {
     private LogService logService;
     @PostMapping("/login/id")
     public String loginByID(HttpServletRequest request){
-        String id=request.getParameter("id");
+        String id=request.getParameter("user");
         String pwd=request.getParameter("pwd");
         return logService.logByID(id,pwd);
     }
     @PostMapping("/login/email")
     public String loginByEmail(HttpServletRequest request){
-        String email=request.getParameter("email");
+        String email=request.getParameter("user");
         String pwd=request.getParameter("pwd");
         return logService.logByEmail(email,pwd);
     }
