@@ -23,8 +23,16 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
     }
 
     @Override
-    public String getDoc(String id) {
-        return (new Gson()).toJson(sourceMapper.getDoc(id));
+    public String getDoc(String id,String token) {
+        String realID=tokenService.getID(token);
+        try{
+        if(realID==id||(sourceMapper.isAdmin(realID)!=null)){
+            return (new Gson()).toJson(sourceMapper.getDoc(id));
+        }
+        }catch (Exception e) {
+        }
+        //TODO
+        return "";
     }
 
     @Override
@@ -62,5 +70,9 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
     public void deleteImage(String id, String imageID) {
         sourceMapper.deleteImage(id,imageID);
     }
-
+    public String completeDOC(String token){
+        String id="0";
+        sourceMapper.completeDOC(id);
+        return "";
+    }
 }

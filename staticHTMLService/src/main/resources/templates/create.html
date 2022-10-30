@@ -24,7 +24,6 @@
     <div id="sub">
         <div class="button" id="submit" @click="submit">发布</div>
         <div class="button" id="save" @click="save">保存</div>
-        <div class="button" id="auto-save" @click="autosave">{{autosavetext}}</div>
     </div>
     <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
     <script>
@@ -55,7 +54,7 @@
                     }
                     //TODO
                     ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                    ajax.send('token=' + '&image=' + image);
+                    ajax.send('token='+getCookie("token") + '&image=' + image);
                 }
             }
         }
@@ -78,13 +77,19 @@
             {
                 data() {
                     return {
-                        isautosave: true,
-                        autosavetext: "开启自动保存"
                     }
                 },
                 methods: {
                     submit() {
-
+                        var ajax = new XMLHttpRequest();
+                        ajax.open('POST', '/source/complete_doc', true);
+                        ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                        ajax.onreadystatechange = function () {
+                            if (ajax.readyState == 4) {
+                                alert("已进入审核队列，结果将通过邮件通知，如果一直没收到邮件，可以查看邮箱‘垃圾箱’")
+                            }
+                        }
+                        ajax.send("token=" +getCookie("token"));
                     },
                     save() {
                         var ajax = new XMLHttpRequest();
@@ -95,15 +100,7 @@
                                 alert("已保存！")
                             }
                         }
-                        ajax.send("html=" + editor.getHtml());
-                    },
-                    autosave() {
-                        isautosave = !isautosave;
-                        if (this.isautosave) {
-                            this.autosavetext = "开启自动保存";
-                        } else {
-                            this.autosavetext = "关闭自动保存";
-                        }
+                        ajax.send("html=" + editor.getHtml()+"&token="+getCookie("token"));
                     }
                 }
             }

@@ -9,13 +9,31 @@ eureka:
     fetch-registry: true
 spring:
   jwt:
-  #  JWT存储请求头
+    #  JWT存储请求头
     tokenHeader: Authorization
-  #  JWT加密使用的密钥
+    #  JWT加密使用的密钥
     secret: token_secret
     expiration: 604800
-  #  JWT负载中拿到开头
+    #  JWT负载中拿到开头
     tokenHead: Bearer
   application:
-    name: tokenService
-
+    name: tokenService  #微服务名称，对外暴漏的微服务名称，十分重要
+  ################################################## JDBC 通用配置  ##########################################
+  datasource:
+    username: root        #数据库登陆用户名
+    password: 123456        #数据库登陆密码
+    url: jdbc:mysql://localhost:3306/source?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false    #数据库url
+    driver-class-name: com.mysql.cj.jdbc.Driver                  #数据库驱动
+############################### 不检查 spring.config.import=configserver:##################
+#  cloud:
+#    config:
+#      enabled: false
+###################################### MyBatis 配置 ######################################
+mybatis:
+  # 指定 mapper.xml 的位置
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  #扫描实体类的位置,在此处指明扫描实体类的包，在 mapper.xml 中就可以不写实体类的全路径名
+  type-aliases-package: wiki.common_cat.tokenService.entities
+  configuration:
+    #默认开启驼峰命名法，可以不用设置该属性
+    map-underscore-to-camel-case: true

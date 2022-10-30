@@ -13,10 +13,10 @@ import java.util.Map;
 @FeignClient(value = "TOKENSERVICE")
 public interface TokenService {
     @GetMapping("/gettoken/")
-    public String getToken(@RequestBody Map<String,String> body);
+    String getToken(@RequestBody Map<String,String> body);
     @PostMapping("/updateToken/{token}")
-    public void updateToken(@PathVariable("token")String token);
+    void updateToken(@PathVariable("token")String token);
     //刷新token销毁时间
     @GetMapping("/getid/{token}")
-    public String getID(@PathVariable("token")String token);
+    String getID(@PathVariable("token")String token);
 }

@@ -15,10 +15,10 @@ public class SourceServiceController {
     private SourceService sourceService;
 
     @GetMapping("/source/doc/{id}")
-    public String getDoc(@PathVariable("id")String id){
-        System.out.println("id:"+id);
-        System.out.println("doc:"+sourceService.getDoc(id));
-        return sourceService.getDoc(id);
+    public String getDoc(HttpServletRequest httpServletRequest){
+        String id=httpServletRequest.getParameter("id");
+        String token=httpServletRequest.getParameter("token");
+        return sourceService.getDoc(id,token);
     }
     //根据用户ID获取其花名册 每个用户维护一份自己的DOC
     @PostMapping("/source/del-doc")
@@ -45,5 +45,8 @@ public class SourceServiceController {
     public void deleteImage(@PathVariable("id")String id,@PathVariable("musicID")String imageID){
         sourceService.deleteImage(id,imageID);
     }
-
+    @PostMapping("/source/complete_doc")
+    public String completeDOC(HttpServletRequest httpServletRequest){
+        return sourceService.completeDOC(httpServletRequest.getParameter("token"));
+    }
 }

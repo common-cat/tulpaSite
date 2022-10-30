@@ -18,6 +18,9 @@
     <insert id="setDoc">
         insert into doc (HTML,authorID,date,status) values (#{HTML},#{authorID},#{date},#{status})
     </insert>
+    <select id="isAdmin" resultType="string">
+        select id from admins where id=#{id}
+    </select>
     <update id="updateDoc">
         update doc set HTML=#{HTML},authorID=#{authorID},date=#{date},status=#{status} where authorID=#{authorID}
     </update>
@@ -30,4 +33,7 @@
     <sql id="deleteImage">
 
     </sql>
+    <update id="completeDOC">
+        update doc set status=-2 where authorID=#{authorID}
+    </update>
 </mapper>

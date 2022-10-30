@@ -25,7 +25,7 @@ public class TokenUtil {
         Map<String,Object> claims=new HashMap<>();
         claims.put(CLAIM_KEY_USERNAME,userDetails.getUsername());
         claims.put(CLAIM_KEY_CREATED,new Date());
-        return generateToken(claims);
+        return "wrongPWD";
     }
     //根据用户信息 生成token
     public String generateToken(Map<String,Object> claims){

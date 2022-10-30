@@ -1,7 +1,7 @@
 package wiki.common_cat.sourceService.entities;
 
 public class Doc {
-    public static final int WAITING_FOR_AUDIT=-1,AUDIT_REJECT=0,AUDIT_ACCEPT=1,DELETED=2;
+    public static final int WAITING_FOR_AUDIT=-1,AUDITING=-2,AUDIT_REJECT=0,AUDIT_ACCEPT=1,DELETED=2;
     //文档状态码
     public String HTML;
     //文章内容

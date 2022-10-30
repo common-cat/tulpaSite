@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 
 
 @RestController
-public class ServiceController {
+public class TokenServiceController {
     @Resource(name = "commonTokenMap")
     private TokenMap tokenMap;
     //对外暴露的服务控制器 用户进行token的服务

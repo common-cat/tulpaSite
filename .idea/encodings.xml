@@ -12,9 +12,11 @@
     <file url="file://$PROJECT_DIR$/eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gate/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gate/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logService/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/logService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mainPageService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-service-cloud-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/outerGate/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/searchService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/signService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sourceService/src/main/java" charset="UTF-8" />

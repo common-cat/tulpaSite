@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.common_cat.logService.mapper.LogMapper">
+    <select id="getUserByID" resultType="wiki.common_cat.logService.entities.User">
+        select * from user where id=#{id}
+    </select>
+    <select id="getUserByEmail" resultType="wiki.common_cat.logService.entities.User">
+        select * from user where email=#{email}
+    </select>
+    <update id="setUser">
+        update user set lastLoginDate=#{lastLoginDate},status=#{status},loginTimes=#{loginTimes} where id=#{id}
+    </update>
+</mapper>

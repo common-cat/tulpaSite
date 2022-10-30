@@ -1,4 +1,4 @@
-package wiki.common_cat.sourceService.service;
+package wiki.common_cat.logService.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
