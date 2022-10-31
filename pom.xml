@@ -9,7 +9,6 @@
         <module>eureka</module>
         <module>gate</module>
         <module>staticHTMLService</module>
-        <module>tokenService</module>
         <module>logService</module>
         <module>signService</module>
         <module>mainPageService</module>

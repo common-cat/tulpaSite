@@ -30,7 +30,24 @@
                 },
                 methods: {
                     login() {
-                        ajax=new XMLHttpRequest();
+                        ajax = new XMLHttpRequest();
+                        ajax.onreadystatechange = function () {
+                            if (ajax.readyState == 4) {
+                                let text=ajax.responseText;
+                                if(text=="wrongTimes"){
+                                    alert("尝试次数过多!");
+                                }else
+                                if(text=="wrongPWD"){
+                                    alert("账户或者密码错误");
+                                }else{
+                                    alert("已登录");
+                                    setSessionID(text);
+                                    console.log("sessionID:"+getSessionID());
+                                    //window.close();
+                                }
+
+                            }
+                        }
                         var user = this.user;
                         var pwd = this.pwd;
                         //14位ID
@@ -39,12 +56,11 @@
                             ajax.open("POST", "/login/email");
                             ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                             ajax.send("user=" + user + "&pwd=" + pwd);
-                        }else{
+                        } else {
                             ajax.open("POST", "/login/id");
                             ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                             ajax.send("user=" + user + "&pwd=" + pwd);
                         }
-                        ajax = new XMLHttpRequest();
                     }
                     ,
                     signin() {
@@ -52,7 +68,7 @@
                     }
                     ,
                     forgetPWD() {
-                        window.open("/static/forget");
+                        alert("请联系喵喵(QQ:2145697403)手动恢复密码")
                     }
                 }
             }

@@ -2,18 +2,17 @@ package wiki.common_cat.sourceService.service.impl;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
+import redis.clients.jedis.Jedis;
 import org.springframework.stereotype.Service;
 import wiki.common_cat.sourceService.entities.Doc;
 import wiki.common_cat.sourceService.mapper.SourceMapper;
-import wiki.common_cat.sourceService.service.TokenService;
 
 import java.util.Base64;
 import java.util.Date;
 import java.util.Random;
 @Service("testSourceService")
 public class SourceService implements wiki.common_cat.sourceService.service.SourceService {
-    @Autowired
-    private TokenService tokenService;
+    private Jedis jedis=new Jedis("localhost");
     @Autowired
     private SourceMapper sourceMapper;
     @Override
@@ -23,22 +22,27 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
     }
 
     @Override
-    public String getDoc(String id,String token) {
-        String realID=tokenService.getID(token);
+    public String getDoc(String id,String sessionID) {
+        String realID="";
         try{
-        if(realID==id||(sourceMapper.isAdmin(realID)!=null)){
-            return (new Gson()).toJson(sourceMapper.getDoc(id));
+            realID=jedis.get(sessionID);
+        }catch (Exception e){
+
+        }
+        Doc doc=sourceMapper.getDoc(id);
+        try{
+        if(realID.equals(id)||((sourceMapper.isAdmin(realID)!=null))||doc.status==Doc.AUDIT_ACCEPT){
+            return (new Gson()).toJson(doc);
         }
         }catch (Exception e) {
+            System.out.println(e);
         }
-        //TODO
         return "";
     }
 
     @Override
-    public void setDoc(String token,String html) {
-        String id="0";
-        System.out.println("sou"+sourceMapper.docExist(id));
+    public void setDoc(String html,String sessionID) {
+        String id=jedis.get(sessionID);
         if(sourceMapper.docExist(id)==null){
             sourceMapper.setDoc(html,id,(new Date()).toString(), Doc.WAITING_FOR_AUDIT);
         }else {
@@ -46,11 +50,10 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
         }
     }
     @Override
-    public String setImage(String token, String base64) {
-        String id="0";
+    public String setImage( String base64,String sessionID) {
+        String id=jedis.get(sessionID);
         String imageID;
         String flag=sourceMapper.imageExist(base64.hashCode());
-        System.out.println("flag:"+flag);
         if(flag==null){
             imageID=id+"-"+System.nanoTime()+(new Random()).nextFloat();
             sourceMapper.setImage(imageID, Base64.getDecoder().decode(base64.replaceAll(" ","+")),(new Date()).toString(),base64.hashCode());
@@ -70,8 +73,8 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
     public void deleteImage(String id, String imageID) {
         sourceMapper.deleteImage(id,imageID);
     }
-    public String completeDOC(String token){
-        String id="0";
+    public String completeDOC(String sessionID){
+        String id=jedis.get(sessionID);
         sourceMapper.completeDOC(id);
         return "";
     }

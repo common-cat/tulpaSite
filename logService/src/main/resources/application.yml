@@ -29,3 +29,9 @@ mybatis:
   configuration:
     #默认开启驼峰命名法，可以不用设置该属性
     map-underscore-to-camel-case: true
+feign:
+  oauth2:
+    enabled: true
+    load-balanced: true
+redis:
+  location: localhost

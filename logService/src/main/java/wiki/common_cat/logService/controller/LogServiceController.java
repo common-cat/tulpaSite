@@ -15,12 +15,12 @@ public class LogServiceController {
     public String loginByID(HttpServletRequest request){
         String id=request.getParameter("user");
         String pwd=request.getParameter("pwd");
-        return logService.logByID(id,pwd);
+        return logService.logByID(request.getSession().getId(),id,pwd);
     }
     @PostMapping("/login/email")
-    public String loginByEmail(HttpServletRequest request){
-        String email=request.getParameter("user");
-        String pwd=request.getParameter("pwd");
-        return logService.logByEmail(email,pwd);
+    public String loginByEmail(HttpServletRequest request) {
+        String id = request.getParameter("user");
+        String pwd = request.getParameter("pwd");
+        return logService.logByID(request.getSession().getId(), id, pwd);
     }
 }

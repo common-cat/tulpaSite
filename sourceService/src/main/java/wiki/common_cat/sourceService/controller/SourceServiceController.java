@@ -15,38 +15,38 @@ public class SourceServiceController {
     private SourceService sourceService;
 
     @GetMapping("/source/doc/{id}")
-    public String getDoc(HttpServletRequest httpServletRequest){
-        String id=httpServletRequest.getParameter("id");
-        String token=httpServletRequest.getParameter("token");
-        return sourceService.getDoc(id,token);
+    public String getDoc(HttpServletRequest httpServletRequest,@PathVariable("id")String id){
+        String sessionID=httpServletRequest.getParameter("sessionID");
+        System.out.println(sourceService.getDoc(id,sessionID));
+        return sourceService.getDoc(id,sessionID);
     }
     //根据用户ID获取其花名册 每个用户维护一份自己的DOC
     @PostMapping("/source/del-doc")
     public void deleteDoc(HttpServletRequest httpServletRequest){
-        String token=httpServletRequest.getParameter("token");
-        sourceService.deleteDoc(token);
+        String sessionID=httpServletRequest.getParameter("sessionID");
+        sourceService.deleteDoc(sessionID);
     }
     @PostMapping("/source/upload-doc")
     public void setDoc(HttpServletRequest httpServletRequest){
-        String token=httpServletRequest.getParameter("token");
-        sourceService.setDoc(token,httpServletRequest.getParameter("html"));
+        String sessionID=httpServletRequest.getParameter("sessionID");
+        sourceService.setDoc(httpServletRequest.getParameter("html"),sessionID);
     }
     @PostMapping("/source/upload-image")
     public String setImage(HttpServletRequest httpServletRequest){
-        String token=httpServletRequest.getParameter("token");
+        String sessionID=httpServletRequest.getParameter("sessionID");
         String base64=httpServletRequest.getParameter("image");
-        return sourceService.setImage(token,base64);
+        return sourceService.setImage(base64,sessionID);
     }
     @GetMapping("/source/image/{imageID}")
     public byte[] getImage(@PathVariable("imageID")String imageID){
         return sourceService.getImage(imageID);
     }
     @PostMapping("/source/del-image/{id}/{imageID}")
-    public void deleteImage(@PathVariable("id")String id,@PathVariable("musicID")String imageID){
-        sourceService.deleteImage(id,imageID);
+    public void deleteImage(HttpServletRequest httpServletRequest,@PathVariable("musicID")String imageID){
+        sourceService.deleteImage(httpServletRequest.getParameter("sessionID"),imageID);
     }
     @PostMapping("/source/complete_doc")
     public String completeDOC(HttpServletRequest httpServletRequest){
-        return sourceService.completeDOC(httpServletRequest.getParameter("token"));
+        return sourceService.completeDOC(httpServletRequest.getSession().getId());
     }
 }

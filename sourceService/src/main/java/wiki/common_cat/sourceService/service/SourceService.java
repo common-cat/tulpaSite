@@ -1,12 +1,12 @@
 package wiki.common_cat.sourceService.service;
 
 public interface SourceService {
-    void deleteDoc(String token);
-    String getDoc(String id,String token);
-    void setDoc(String token,String html);
+    void deleteDoc(String sessionID);
+    String getDoc(String id,String sessionID);
+    void setDoc(String html,String sessionID);
 
-    String setImage(String token,String base64);
+    String setImage(String base64,String sessionID);
     byte[] getImage(String imageID);
     void deleteImage(String id, String imageID);
-    String completeDOC(String token);
+    String completeDOC(String sessionID);
 }

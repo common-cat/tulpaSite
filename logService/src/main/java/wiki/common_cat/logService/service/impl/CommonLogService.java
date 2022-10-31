@@ -1,11 +1,12 @@
 package wiki.common_cat.logService.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import redis.clients.jedis.Jedis;
 import wiki.common_cat.logService.entities.User;
 import wiki.common_cat.logService.mapper.LogMapper;
 import wiki.common_cat.logService.service.LogService;
-import wiki.common_cat.logService.service.TokenService;
 
 import java.util.HashMap;
 
@@ -13,10 +14,9 @@ import java.util.HashMap;
 public class CommonLogService implements LogService {
     @Autowired
     LogMapper mapper;
-    @Autowired
-    TokenService service;
+    Jedis jedis=new Jedis("localhost");
     @Override
-    public String logByID(String id, String pwd) {
+    public String logByID(String sessionID,String id, String pwd) {
         User user=mapper.getUserByID(id);
         System.out.println("id:"+id);
         if(!user.tryRightTimes()){
@@ -25,19 +25,16 @@ public class CommonLogService implements LogService {
         }
         mapper.setUser(user.getLastLoginDate(), user.getStatus(),user.getLoginTimes(),user.getId());
         if(mapper.getUserByID(id).isRightPWD(pwd)){
-            return service.getToken(new HashMap<>(){
-                {
-                    put("id",id);
-                    put("pwd",pwd);
-                    put("isAccountNonExpired","false");
-                }
-            });
+            System.out.println("sessionID:"+sessionID);
+            System.out.println("id:"+id);
+            jedis.set(sessionID,id);
+            return sessionID;
         }
         return "wrongPWD";
     }
 //成功则返回token
     @Override
-    public String logByEmail(String email, String pwd) {
+    public String logByEmail(String sessionID,String email, String pwd) {
         User user=mapper.getUserByEmail(email);
         if(!user.tryRightTimes()){
             mapper.setUser(user.getLastLoginDate(), user.getStatus(),user.getLoginTimes(),user.getId());
@@ -45,13 +42,8 @@ public class CommonLogService implements LogService {
         }
         mapper.setUser(user.getLastLoginDate(), user.getStatus(),user.getLoginTimes(),user.getId());
         if(user.isRightPWD(pwd)){
-            return service.getToken(new HashMap<>(){
-                {
-                    put("id",user.getId());
-                    put("pwd",pwd);
-                    put("isAccountNonExpired","false");
-                }
-            });
+            jedis.set(sessionID,user.getId());
+            return sessionID;
         }
         return "wrongPWD";
     }

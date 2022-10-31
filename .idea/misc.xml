@@ -6,7 +6,6 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/staticHTMLService/pom.xml" />
-        <option value="$PROJECT_DIR$/tokenService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

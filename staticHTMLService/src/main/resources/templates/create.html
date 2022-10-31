@@ -54,7 +54,7 @@
                     }
                     //TODO
                     ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                    ajax.send('token='+getCookie("token") + '&image=' + image);
+                    ajax.send("sessionID="+getSessionID()+ '&image=' + image);
                 }
             }
         }
@@ -82,7 +82,7 @@
                 methods: {
                     submit() {
                         var ajax = new XMLHttpRequest();
-                        ajax.open('POST', '/source/complete_doc', true);
+                        ajax.open('POST', '/source/complete_doc'+"?sessionID="+getSessionID(), true);
                         ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                         ajax.onreadystatechange = function () {
                             if (ajax.readyState == 4) {
@@ -93,7 +93,7 @@
                     },
                     save() {
                         var ajax = new XMLHttpRequest();
-                        ajax.open('POST', '/source/upload-doc', true);
+                        ajax.open('POST', '/source/upload-doc'+"?sessionID="+getSessionID(), true);
                         ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                         ajax.onreadystatechange = function () {
                             if (ajax.readyState == 4) {
@@ -108,7 +108,7 @@
         app.mount("#sub");
         function download() {
             var ajax = new XMLHttpRequest();
-            ajax.open('GET', '/source/doc/' + "0", true);
+            ajax.open('GET', '/source/doc/' + "0"+"?sessionID="+getSessionID(), true);
             ajax.onreadystatechange = function () {
                 if (ajax.readyState == 4) {
                     doc=JSON.parse(ajax.responseText);
@@ -119,7 +119,6 @@
             ajax.send();
         }
         download();
-
     </script>
 </body>
 

@@ -1,5 +1,5 @@
 server:
-  port: 9004
+  port: 9007
 eureka:
   client:
     register-with-eureka: true
@@ -9,7 +9,7 @@ eureka:
 spring:
 
   application:
-    name: sourceService  #微服务名称，对外暴漏的微服务名称，十分重要
+    name: mainPageService  #微服务名称，对外暴漏的微服务名称，十分重要
   ################################################## JDBC 通用配置  ##########################################
   datasource:
     username: root        #数据库登陆用户名
@@ -25,7 +25,7 @@ mybatis:
   # 指定 mapper.xml 的位置
   mapper-locations: classpath:/mybatis/mapper/*.xml
   #扫描实体类的位置,在此处指明扫描实体类的包，在 mapper.xml 中就可以不写实体类的全路径名
-  type-aliases-package: wiki.common_cat.sourceService.entities
+  type-aliases-package: wiki.common_cat.mainPageService.entities
   configuration:
     #默认开启驼峰命名法，可以不用设置该属性
     map-underscore-to-camel-case: true

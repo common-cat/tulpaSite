@@ -1,13 +1,19 @@
 function getCookie(name) {
-    var arr =document.cookie.match(new RegExp(name+"=\\w+;?","g"));
-    if(arr != null) {
+    var arr = document.cookie.match(new RegExp(name + "=\\w+;?", "g"));
+    if (arr != null) {
         return arr[0].split("=")[1];
     }
     return null;
 }
-function setCookie(name,value){
-    document.cookie=name+"="+value;
+function setCookie(name, value) {
+    document.cookie = name + "=" + value;
 }
-function delCookie(name){
-    document.cookie=name+"=";
+function delCookie(name) {
+    document.cookie = name + "=";
+}
+function setSessionID(id) {
+    setCookie("sessionID", id);
+}
+function getSessionID() {
+    return getCookie("sessionID");
 }
