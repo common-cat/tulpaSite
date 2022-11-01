@@ -1,0 +1,39 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.common_cat.sourceService.mapper.SourceMapper">
+    <select id="getDoc" resultType="wiki.common_cat.sourceService.entities.Doc">
+        select * from doc where authorID=#{authorID}
+    </select>
+    <select id="imageExist" resultType="string">
+        select imageID from images where hash=#{hash}
+    </select>
+    <select id="getImage" resultType="wiki.common_cat.sourceService.entities.Image">
+        select * from images where imageID=#{imageID}
+    </select>
+    <select id="docExist" resultType="string">
+        select authorID from doc where authorID=#{authorID}
+    </select>
+    <insert id="setDoc">
+        insert into doc (HTML,authorID,date,status) values (#{HTML},#{authorID},#{date},#{status})
+    </insert>
+    <select id="isAdmin" resultType="string">
+        select id from admins where id=#{id}
+    </select>
+    <update id="updateDoc">
+        update doc set HTML=#{HTML},authorID=#{authorID},date=#{date},status=#{status} where authorID=#{authorID}
+    </update>
+    <sql id="deleteDoc">
+
+    </sql>
+    <insert id="setImage">
+        insert into images (imageID,file,date,hash) values (#{imageID},#{file},#{date},#{hash})
+    </insert>
+    <sql id="deleteImage">
+
+    </sql>
+    <update id="completeDOC">
+        update doc set status=-2 where authorID=#{authorID}
+    </update>
+</mapper>
