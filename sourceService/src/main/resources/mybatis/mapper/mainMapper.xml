@@ -16,7 +16,7 @@
         select authorID from doc where authorID=#{authorID}
     </select>
     <insert id="setDoc">
-        insert into doc (HTML,authorID,date,status) values (#{HTML},#{authorID},#{date},#{status})
+        insert into doc (HTML,authorID,date,status) values (#{HTML},#{authorID},NOW(),#{status})
     </insert>
     <select id="isAdmin" resultType="string">
         select id from admins where id=#{id}

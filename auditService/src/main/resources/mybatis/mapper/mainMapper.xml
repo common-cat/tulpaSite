@@ -1,0 +1,33 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.common_cat.auditService.mapper.AuditMapper">
+    <select id="getDoc" resultType="wiki.common_cat.auditService.entities.Doc">
+        select * from doc where authorID=#{authorID}
+    </select>
+    <select id="getAuditedDoc" resultType="wiki.common_cat.auditService.entities.Doc">
+        select * from audited_doc where authorID=#{authorID}
+    </select>
+    <select id="getAuditingDoc" resultType="wiki.common_cat.auditService.entities.Doc">
+        select * from auditing_doc where authorID=#{authorID}
+    </select>
+    <delete id="delAuditDoc">
+        DELETE FROM auditing_doc WHERE authorID=#{authorID}
+    </delete>
+    <delete id="rejectDoc">
+        DELETE FROM auditing_doc WHERE authorID=#{authorID}
+    </delete>
+    <insert id="auditDoc">
+        insert into auditing_doc (HTML,authorID,date,status) values (#{HTML},#{authorID},NOW(),#{status})
+    </insert>
+    <insert id="acceptDoc">
+        insert into audited_doc (HTML,authorID,date,status) values (#{HTML},#{authorID},NOW(),#{status})
+    </insert>
+    <select id="isAdmin" resultType="string">
+        select id from admins where id=#{id}
+    </select>
+    <select id="auditList" resultType="string">
+        select authorID form auditing_doc
+    </select>
+</mapper>

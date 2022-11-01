@@ -82,7 +82,7 @@
                 methods: {
                     submit() {
                         var ajax = new XMLHttpRequest();
-                        ajax.open('POST', '/source/complete_doc'+"?sessionID="+getSessionID(), true);
+                        ajax.open('POST', '/audit/commit'+"?sessionID="+getSessionID(), true);
                         ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                         ajax.onreadystatechange = function () {
                             if (ajax.readyState == 4) {
@@ -93,14 +93,14 @@
                     },
                     save() {
                         var ajax = new XMLHttpRequest();
-                        ajax.open('POST', '/source/upload-doc'+"?sessionID="+getSessionID(), true);
+                        ajax.open('POST', '/source/upload-doc', true);
                         ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                         ajax.onreadystatechange = function () {
                             if (ajax.readyState == 4) {
                                 alert("已保存！")
                             }
                         }
-                        ajax.send("html=" + editor.getHtml()+"&token="+getCookie("token"));
+                        ajax.send("html=" + editor.getHtml()+"&sessionID="+getSessionID());
                     }
                 }
             }

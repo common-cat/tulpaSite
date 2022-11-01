@@ -12,7 +12,6 @@
         <module>logService</module>
         <module>signService</module>
         <module>mainPageService</module>
-        <module>AdminService</module>
         <module>searchService</module>
         <module>sourceService</module>
         <module>auditService</module>
