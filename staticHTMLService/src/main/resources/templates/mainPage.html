@@ -36,35 +36,35 @@
         </div>
     </header>
     <script>
-        window.onblur=function(){
+        window.onblur = function () {
             loginbyToken(getCookie("token"));
         }
     </script>
     <script>
-        var headerApp=Vue.createApp(
+        var headerApp = Vue.createApp(
             {
-                data(){
-                    return{
-                        imgSrc:"",
-                        isLogin:false,
-                        hidden:true
+                data() {
+                    return {
+                        imgSrc: "",
+                        isLogin: false,
+                        hidden: true
                     }
                 },
-                methods:{
-                    login(){
+                methods: {
+                    login() {
                         window.open("static/login");
                     },
-                    signin(){
+                    signin() {
                         window.open("static/signin");
                     },
-                    logout(){
+                    logout() {
                         delCookie("token");
                         delCookie("userName");
-                        hidden=true;
-                        isLogin=false;
+                        hidden = true;
+                        isLogin = false;
                     },
-                    connecting(){
-                        
+                    connecting() {
+
                     }
                 }
             }
@@ -77,15 +77,15 @@
     <div class="contents" id="searchBind">
         <input id="search" v-model="searchdata" type="text" @input="searchdatachanged()" @keyup.enter.native="search()">
     </div>
-    <div class="contents" id="newPages">
-        <h3>最新页面</h3>
-        <div class="contents"></div>
-    </div>
-    <div class="contents" id="hotPages">
+    <div class="contents" id="randomPages">
         <h3>随机页面</h3>
+        <div class="button" id="randomPagesButton" @click="random()">获取</div>
         <div class="contents"></div>
+        <items v-for="item in items" :tulpas="item.tulpas" :hosts="item.hosts" :introduction="item.introduction"
+            :herf="herf">
+        </items>
     </div>
-    <div id="create" class="button" >
+    <div id="create" class="button">
 
         <div @click="create_">点击这里创建你自己的页面!</div>
     </div>
@@ -110,19 +110,51 @@
         var app1 = Vue.createApp(
             {
                 methods: {
-                    data(){
-                        return{
+                    data() {
+                        return {
 
                         }
                     },
                     create_() {
-                    
+
                         window.open("/static/create");
                     }
                 }
             }
         );
+        var pages = 4;
         app1.mount("#create");
+        app2 = Vue.createApp({
+            data() {
+                return {
+                    randomPages: []
+                }
+            },
+            methods: {
+                random() {
+                    alert("random")
+                    ajax.open("GET", "/mainpage/random?pages=" + pages)
+                    ajax.onreadystatechange = function () {
+                        if (ajax.readyState == 4) {
+                            console.log(JSON.parse(ajax.responseText));
+                            this.randomPages = JSON.parse(ajax.responseText);
+                        }
+                    }
+                },
+                page_() {
+                    alert("mew")
+                }
+            }
+        });
+        app.component('items', {
+            template:
+                `<div class="contents"></div>`
+            ,
+            props: ["tulpas", "hosts", "hosts", "introduction"]
+            , emits: ['page_']
+        });
+        app2.mount("#randomPages")
     </script>
 </body>
+
 </html>

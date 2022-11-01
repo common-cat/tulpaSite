@@ -1,0 +1,12 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.common_cat.mainPageService.mapper.MainPageMapper">
+    <select id="getRandomDocs" resultType="string">
+        select authorID from audited_doc where ORDER BY RAND() LIMIT ${pages};
+    </select>
+    <select id="getUserInfo" resultType="wiki.common_cat.mainPageService.entities.User">
+        select * from userinfo where id=${id};
+    </select>
+</mapper>
