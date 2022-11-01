@@ -5,13 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335e7224-8262-4952-a506-1661a3709458" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/service/Res.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/privatePageService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/controller/MainPageServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/controller/MainPageServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gate/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gate/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/service/impl/CommonLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/service/impl/CommonLogService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/PrivatePageApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/PrivatePageApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/controller/PrivatePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/controller/PrivatePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/mapper/PrivatePageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/mapper/PrivatePageMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/service/PrivatePageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/service/PrivatePageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/service/impl/CommonPrivatePageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/service/impl/CommonPrivatePageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/resources/mapper/mainMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/mapper/StaticMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/mapper/StaticMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/service/StaticHTMLService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/service/StaticHTMLService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/service/impl/CommonStaticHTMLService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/service/impl/CommonStaticHTMLService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/private.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/private.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/loginPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/privatePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/privatePage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +80,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Desktop/tulpasite/TulpaSite/mainPageService/src/main/resources/mybatis/mapper&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Desktop/tulpasite/TulpaSite/privatePageService/src/main/java/wiki/common_cat/privatePageService/entities&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -69,13 +88,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\privatePageService\src\main\java\wiki\common_cat\privatePageService\entities" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\mainPageService\src\main\resources\mybatis\mapper" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\signService\src\main\resources" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\logService\src\main\resources" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\outerGate" />
-      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\sourceService\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\privatePageService\src\main\resources\mybatis" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\mainPageService\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -111,12 +131,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LogServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.logService.LogServiceApplication" />
-      <module name="logService" />
+    <configuration name="MainPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.mainPageService.MainPageApplication" />
+      <module name="mainPageService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wiki.common_cat.logService.*" />
+          <option name="PATTERN" value="wiki.common_cat.mainPageService.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,12 +144,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.mainPageService.MainPageApplication" />
-      <module name="mainPageService" />
+    <configuration name="PrivatePageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.privatePageService.PrivatePageApplication" />
+      <module name="privatePageService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wiki.common_cat.mainPageService.*" />
+          <option name="PATTERN" value="wiki.common_cat.privatePageService.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.PrivatePageApplication" />
         <item itemvalue="应用程序.GatewayApplication" />
         <item itemvalue="应用程序.Application" />
-        <item itemvalue="应用程序.MainPageApplication" />
         <item itemvalue="应用程序.SourceServiceApplication" />
-        <item itemvalue="应用程序.LogServiceApplication" />
+        <item itemvalue="应用程序.MainPageApplication" />
       </list>
     </recent_temporary>
   </component>

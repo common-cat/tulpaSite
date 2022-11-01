@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/src/css/login.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/src/css/private.css}" type="text/css" rel="stylesheet">
 </head>
+
 <body>
-$END$
+    <script src="/src/js/vue_.js"></script>
+    <script src="/src/js/login.js"></script>
+    <script src="/src/js/main.js"></script>
+    <h1 th:text="${title}"></h1>
+    <hr>
+    <div id="info" class="contents">
+        <h1>TULPAS</h1>
+        <input class="info" type="text" id="tulpas" v-model="tulpas"><br>
+        <h1>HOSTS</h1>
+        <input class="info" type="text" id="hosts" v-model="hosts"><br>
+        <h1>简介</h1>
+        <textarea class="info" id="introduction" v-model="introduction"></textarea>
+        <div @click="flush_()" id="flushing"></div>
+        <br>
+        <div class="button" id="edit" @click="upload()">确认修改</div><br>
+        <div class="button" id="doc" @click="open()">打开你的花名册</div>
+    </div>
+    <script>
+        var ajax = new XMLHttpRequest();
+        var app = Vue.createApp({
+            data() {
+                return {
+                    tulpas: "",
+                    hosts: "",
+                    introduction: ""
+                }
+            },
+            methods: {
+                flush_() {
+                    console.log("mew:" + window.tulpas);
+                    this.tulpas = window.tulpas;
+                    this.hosts = window.hosts;
+                    this.introduction = window.introduction;
+                },
+                upload() {
+                    sessionID=getSessionID(),
+                    tulpas=this.tulpas,
+                    hosts=this.hosts,
+                    introduction=this.introduction
+                    ajax.onreadystatechange = function () {
+                        if (ajax.readyState == 4) {
+                            flush();
+                            alert("已保存");
+                        }
+                    }
+                    ajax.open("POST", "/private/setuserinfo", true);
+                    ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    ajax.send("sessionID="+sessionID+"&tulpas="+tulpas+"&hosts="+hosts+"&introduction="+introduction);
+                },
+                open() {
+                    window.open("/static/create");
+                }
+            }
+
+        })
+        app.mount("#info");
+        function flush() {
+            ajax.open("GET", "/private/userinfo/" + getID());
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+
+                    let r = JSON.parse(
+                        ajax.responseText
+                    );
+                    console.log(r)
+                    window.tulpas = r.tulpas;
+                    window.hosts = r.hosts;
+                    window.introduction = r.introduction;
+                    document.getElementById("flushing").click();
+                }
+            }
+            ajax.send();
+        }
+        flush();
+    </script>
 </body>
+
 </html>

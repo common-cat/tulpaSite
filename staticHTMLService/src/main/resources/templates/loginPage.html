@@ -41,7 +41,9 @@
                                     alert("账户或者密码错误");
                                 }else{
                                     alert("已登录");
-                                    setSessionID(text);
+                                    res=JSON.parse(text);
+                                    setID(res.id);
+                                    setSessionID(res.sessionID);
                                     window.close();
                                 }
 

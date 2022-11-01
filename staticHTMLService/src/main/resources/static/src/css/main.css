@@ -61,3 +61,6 @@ body{
     border-color: gray;
     padding: 5px;
 }
+.bold{
+    font-weight: bold;
+}

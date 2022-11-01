@@ -152,7 +152,7 @@
         });
         app2.component('items', {
             template:
-                `<div class="page">host:{{hosts}}<br>tulpas:{{tulpas}}<hr>简介：{{introduction}}</div>`
+                `<div class="page">host:{{hosts}}<div class="bold"><br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
             ,
             props: ["tulpas", "hosts", "hosts", "introduction"]
             , emits: ['page_']

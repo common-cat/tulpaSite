@@ -1,5 +1,6 @@
 package wiki.common_cat.logService.service.impl;
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -7,6 +8,7 @@ import redis.clients.jedis.Jedis;
 import wiki.common_cat.logService.entities.User;
 import wiki.common_cat.logService.mapper.LogMapper;
 import wiki.common_cat.logService.service.LogService;
+import wiki.common_cat.logService.service.Res;
 
 import java.util.HashMap;
 
@@ -28,7 +30,7 @@ public class CommonLogService implements LogService {
             System.out.println("sessionID:"+sessionID);
             System.out.println("id:"+id);
             jedis.set(sessionID,id);
-            return sessionID;
+            return (new Gson()).toJson(new Res(sessionID,id));
         }
         return "wrongPWD";
     }
@@ -43,7 +45,7 @@ public class CommonLogService implements LogService {
         mapper.setUser(user.getLastLoginDate(), user.getStatus(),user.getLoginTimes(),user.getId());
         if(user.isRightPWD(pwd)){
             jedis.set(sessionID,user.getId());
-            return sessionID;
+            return (new Gson()).toJson(new Res(sessionID,user.getId()));
         }
         return "wrongPWD";
     }

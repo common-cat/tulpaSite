@@ -1,5 +1,5 @@
 server:
-  port: 9004
+  port: 9043
 eureka:
   client:
     register-with-eureka: true
@@ -9,7 +9,7 @@ eureka:
 spring:
 
   application:
-    name: sourceService  #微服务名称，对外暴漏的微服务名称，十分重要
+    name: privatePageService  #微服务名称，对外暴漏的微服务名称，十分重要
   ################################################## JDBC 通用配置  ##########################################
   datasource:
     username: root        #数据库登陆用户名

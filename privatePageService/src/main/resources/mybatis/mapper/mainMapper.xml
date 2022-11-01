@@ -1,0 +1,12 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.common_cat.privatePageService.mapper.PrivatePageMapper">
+    <select id="getUserInfo" resultType="wiki.common_cat.privatePageService.entities.User">
+        select * from userinfo where id=${id}
+    </select>
+    <update id="setUserInfo">
+        update userinfo set tulpas=#{tulpas},hosts=#{hosts},introduction=#{introduction} where id=#{id}
+    </update>
+</mapper>

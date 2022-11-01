@@ -43,6 +43,10 @@ spring:
           uri: lb://MAINPAGESERVICE
           predicates:
             - Path=/mainpage/**
+        - id: private
+          uri: lb://PRIVATEPAGESERVICE
+          predicates:
+            - Path=/private/**
 eureka:
   instance:
     instance-id: gate

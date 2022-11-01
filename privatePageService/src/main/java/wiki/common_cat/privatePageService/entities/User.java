@@ -1,4 +1,4 @@
-package wiki.common_cat.mainPageService.entities;
+package wiki.common_cat.privatePageService.entities;
 
 
 public class User {

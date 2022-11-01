@@ -17,3 +17,9 @@ function setSessionID(id) {
 function getSessionID() {
     return getCookie("sessionID");
 }
+function getID(){
+    return getCookie("id");
+}
+function setID(id){
+    setCookie("id",id);
+}

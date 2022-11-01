@@ -1,4 +1,6 @@
-package wiki.common_cat.privatePageService;
+package wiki.common_cat.privatePageService.service;
 
-public class PrivatePageService {
+public interface PrivatePageService {
+    String getUserInfo(String id);
+    void setUserInfo(String id,String tulpas,String hosts,String introduction);
 }
