@@ -13,7 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 public class SourceServiceController {
     @Resource(name = "testSourceService")
     private SourceService sourceService;
-
+    @GetMapping("/source/doc_mew/{id}")
+    public String getAuditedDoc(@PathVariable("id")String id){
+        return sourceService.getAuditedDoc(id);
+    }
     @GetMapping("/source/doc/{id}")
     public String getDoc(HttpServletRequest httpServletRequest,@PathVariable("id")String id){
         String sessionID=httpServletRequest.getParameter("sessionID");

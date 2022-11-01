@@ -9,4 +9,5 @@ public interface SourceService {
     byte[] getImage(String imageID);
     void deleteImage(String id, String imageID);
     String completeDOC(String sessionID);
+    String getAuditedDoc(String id);
 }

@@ -78,4 +78,9 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
         sourceMapper.completeDOC(id);
         return "";
     }
+
+    @Override
+    public String getAuditedDoc(String id) {
+        return sourceMapper.getAuditedDoc(id);
+    }
 }

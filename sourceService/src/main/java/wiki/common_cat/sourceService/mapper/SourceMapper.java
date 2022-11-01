@@ -17,4 +17,5 @@ public interface SourceMapper {
     String docExist(String authorID);
     void updateDoc(String HTML,String authorID,String date,int status);
     void completeDOC(String authorID);
+    String getAuditedDoc(String id);
 }
