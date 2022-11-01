@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 import wiki.common_cat.mainPageService.service.MainPageService;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class MainPageServiceController {
@@ -14,6 +13,7 @@ public class MainPageServiceController {
     private MainPageService mainPageService;
     @GetMapping("/mainpage/random/{pages}")
     public String randomPages(@PathVariable("pages")int pages){
+        System.out.println("pages:"+pages);
         return mainPageService.randomPages(pages);
         //TODO
     }

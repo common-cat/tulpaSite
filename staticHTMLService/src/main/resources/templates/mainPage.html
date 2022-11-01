@@ -75,15 +75,16 @@
         TULPA花名册
     </h1>
     <div class="contents" id="searchBind">
-        <input id="search" v-model="searchdata" type="text" @input="searchdatachanged()" @keyup.enter.native="search()">
+        <input id="search" v-model="searchdata" type="text" @keyup.enter.native="search()">
     </div>
     <div class="contents" id="randomPages">
         <h3>随机页面</h3>
         <div class="button" id="randomPagesButton" @click="random()">获取</div>
         <div class="contents"></div>
-        <items v-for="item in items" :tulpas="item.tulpas" :hosts="item.hosts" :introduction="item.introduction"
+        <items v-for="item in randomPages" :tulpas="item.tulpas" :hosts="item.hosts" :introduction="item.introduction"
             :herf="herf">
         </items>
+        <div id="reflushP" @click="flush()"></div>
     </div>
     <div id="create" class="button">
 
@@ -132,28 +133,32 @@
             },
             methods: {
                 random() {
-                    alert("random")
-                    ajax.open("GET", "/mainpage/random?pages=" + pages)
+                    ajax.open("GET", "/mainpage/random/" + pages)
                     ajax.onreadystatechange = function () {
                         if (ajax.readyState == 4) {
-                            console.log(JSON.parse(ajax.responseText));
-                            this.randomPages = JSON.parse(ajax.responseText);
+                            window.p = JSON.parse(ajax.responseText);
+                            document.getElementById("reflushP").click();
                         }
                     }
                 },
+                flush(){
+                    this.randomPages=window.p;
+                }
+                ,
                 page_() {
                     alert("mew")
                 }
             }
         });
-        app.component('items', {
+        app2.component('items', {
             template:
-                `<div class="contents"></div>`
+                `<div class="page">host:{{hosts}}<br>tulpas:{{tulpas}}<hr>简介：{{introduction}}</div>`
             ,
             props: ["tulpas", "hosts", "hosts", "introduction"]
             , emits: ['page_']
         });
         app2.mount("#randomPages")
+        document.getElementById("randomPagesButton").click();
     </script>
 </body>
 

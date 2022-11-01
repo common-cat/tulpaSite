@@ -52,3 +52,12 @@ body{
     border-radius: 5px;
     color: rgb(109, 109, 109);
 }
+.page{
+    border-radius: 5px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding:5px;
+    margin: 10px;
+    border-color: gray;
+    padding: 5px;
+}

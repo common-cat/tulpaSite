@@ -12,11 +12,11 @@
         <module>logService</module>
         <module>signService</module>
         <module>mainPageService</module>
-        <module>PageService</module>
         <module>AdminService</module>
         <module>searchService</module>
         <module>sourceService</module>
         <module>auditService</module>
+        <module>privatePageService</module>
     </modules>
     <dependencies>
         <dependency>

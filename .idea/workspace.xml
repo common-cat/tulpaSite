@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335e7224-8262-4952-a506-1661a3709458" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/MainPageApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/mapper/MainPageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainPageService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gate/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gate/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/controller/MainPageServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/controller/MainPageServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/service/MainPageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/service/MainPageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/service/impl/CommonMainPageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/service/impl/CommonMainPageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/loginPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +84,7 @@
       <recent name="wiki.common_cat.sourceService.service" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.MainPageApplication">
+  <component name="RunManager" selected="应用程序.GatewayApplication">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="wiki.common_cat.staticHTMLService.Application" />
       <module name="staticHTMLService" />
@@ -155,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.GatewayApplication" />
         <item itemvalue="应用程序.Application" />
         <item itemvalue="应用程序.MainPageApplication" />
-        <item itemvalue="应用程序.GatewayApplication" />
-        <item itemvalue="应用程序.LogServiceApplication" />
         <item itemvalue="应用程序.SourceServiceApplication" />
+        <item itemvalue="应用程序.LogServiceApplication" />
       </list>
     </recent_temporary>
   </component>
