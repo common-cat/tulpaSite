@@ -59,3 +59,12 @@
     background-color: rgb(148, 255, 207);
     color: whitesmoke;
 }
+.page_{
+    border-radius: 5px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding:5px;
+    margin: 10px;
+    border-color: gray;
+    padding: 5px;
+}

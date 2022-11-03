@@ -1,9 +1,11 @@
 package wiki.common_cat.auditService.service.impl;
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import wiki.common_cat.auditService.entities.Doc;
+import wiki.common_cat.auditService.entities.User;
 import wiki.common_cat.auditService.mapper.AuditMapper;
 import wiki.common_cat.auditService.service.AuditService;
 @Service("commonAuditService")
@@ -14,7 +16,8 @@ public class CommonAuditService implements AuditService {
     @Override
     public void commit(String sessionID) {
         Doc srcDoc= mapper.getDoc(Integer.valueOf(jedis.get(sessionID)));
-        mapper.auditDoc(srcDoc.HTML,srcDoc.authorID);
+        mapper.delAuditDoc(srcDoc.getId());
+        mapper.auditDoc(srcDoc.HTML,srcDoc.getId());
     }
 
     @Override
@@ -32,11 +35,21 @@ public class CommonAuditService implements AuditService {
     @Override
     public boolean isAdmin(String sessionID) {
         String realID=jedis.get(sessionID);
-        return mapper.isAdmin(Integer.valueOf(realID))!=null;
+        int id=Integer.valueOf(realID);
+        return mapper.isAdmin(id)!=null;
     }
 
     @Override
-    public int[] getAuditList() {
-        return mapper.auditList();
+    public String getAuditList() {
+        int[] ids=mapper.auditList();
+        User[] users=new User[ids.length];
+        for(int i=0;i< ids.length;i++){
+            System.out.println("id:"+ids[i]);
+            users[i]=mapper.getUserInfo(ids[i]);
+        }
+        for(User user:users){
+            System.out.println(user);
+        }
+        return (new Gson()).toJson(users);
     }
 }

@@ -5,5 +5,5 @@ public interface AuditService {
     void reject(int id);
     void accept(int id);
     boolean isAdmin(String sessionID);
-    int[] getAuditList();
+    String getAuditList();
 }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--导入thymeleaf的名称空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div th:text="${id}" style="display: none;" id="id"></div>
+    <script src="/src/js/vue_.js"></script>
+    <script src="/src/js/login.js"></script>
+    <script src="/src/js/main.js"></script>
+    <div id="main">
+        <div id="html"></div>
+        <div id="accept" class="button" @click="accept">通过</div>
+        <div id="reject" class="button" @click="reject">拒绝</div>
+        <div id="d" @click="downloaded"></div>
+    </div>
+    <script>
+        var id = document.getElementById("id").innerHTML;
+        var app = Vue.createApp({
+            data() {
+                return {
+                    
+                }
+            },
+            methods: {
+                accept() {
+                    ajax = new XMLHttpRequest()
+                    ajax.open("POST", "/audit/accept/" + id, true);
+                    ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    ajax.onreadystatechange = function () {
+                        if (ajax.readyState == 4) {
+                            alert("已通过");
+                        }
+                    }
+                    ajax.send("sessionID=" + getSessionID());
+                }
+                ,
+                reject() {
+                    ajax = new XMLHttpRequest()
+                    ajax.open("POST", "/audit/reject/" + id, true);
+                    ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    ajax.onreadystatechange = function () {
+                        if (ajax.readyState == 4) { 
+                            alert("已拒绝");
+                        }
+                    }
+                    ajax.send("sessionID=" + getSessionID());
+                }
+                ,
+                downloaded() {
+                document.getElementById("html").innerHTML=window.html;
+                }
+            }
+        });
+        app.mount("#main");
+        function downloaded() {
+            document.getElementById("d").click();
+        }
+        function download() {
+            ajax = new XMLHttpRequest();
+            ajax.open('GET', '/source/doc/' + getID() + "?sessionID=" + getSessionID(), true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                    if (ajax.responseText == "401") {
+                        setID("");
+                    }
+                    doc = JSON.parse(ajax.responseText);
+                    window.html = doc.HTML;
+                    downloaded();
+                }
+            }
+            ajax.send();
+        }
+
+        download();
+    </script>
+
+</body>
+
+</html>

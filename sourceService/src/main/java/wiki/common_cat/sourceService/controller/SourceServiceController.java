@@ -20,7 +20,6 @@ public class SourceServiceController {
     @GetMapping("/source/doc/{id}")
     public String getDoc(HttpServletRequest httpServletRequest,@PathVariable("id")String id){
         String sessionID=httpServletRequest.getParameter("sessionID");
-        System.out.println(sourceService.getDoc(id,sessionID));
         return sourceService.getDoc(id,sessionID);
     }
     //根据用户ID获取其花名册 每个用户维护一份自己的DOC

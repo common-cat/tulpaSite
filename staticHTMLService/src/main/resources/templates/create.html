@@ -114,7 +114,7 @@
             ajax.onreadystatechange = function () {
                 if (ajax.readyState == 4) {
                     if (ajax.responseText == "401") {
-                        setID("0");
+                        setID("");
                     }
                     doc = JSON.parse(ajax.responseText);
                     editor.setHtml(doc.HTML);

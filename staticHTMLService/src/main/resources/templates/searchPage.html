@@ -36,7 +36,7 @@
         <div class="button" id="last">上一页</div>
         <div class="button" id="next">下一页</div>
         <div class="button" id="total">{{nowpage}}/{{totalpage}}</div>
-        <pages id="pages" v-for="page in nows" :hosts="page.hosts" :tulpas="page.tulpas" :introduction="page.introduction" :id="page.ID" @page_="page_(id)">
+        <pages id="pages" v-for="page in nows" :hosts="page.hosts" :tulpas="page.tulpas" :introduction="page.introduction" :id="page.ID" @page_="page_(page)">
             
         </pages>
     </div>
@@ -77,21 +77,22 @@
                     var r=window.answers;
                     this.totalpage=r.totalpage;
                     this.nows=window.answers;
-                    console.log(this.nows)
                     this.ps=r.ps;
                     this.nowpage=1;
                     this.totalpage=Math.ceil(r.length/pagesNum);
                 },
-                page_(id){
-                    window.open("/static/page/"+id);
+                page_(page){
+                    console.log("page")
+                    console.log(page)
+                    window.open("/static/page/"+page.ID);
                 }
             }
         })
         app.component('pages', {
             template:
-                `<div class="contents" @click="page_(id)"><div class="bold">host:{{hosts}}<br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
+                `<div class="contents" v-on:click="$emit('page_')"><div class="bold">host:{{hosts}}<br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
             ,
-            props: ["tulpas", "hosts", "hosts", "introduction"]
+            props: ["tulpas", "hosts", "introduction","id"]
             , emits: ['page_']
         });
         app.mount("#main");

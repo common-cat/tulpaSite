@@ -15,7 +15,7 @@ public class CommonMainPageService implements MainPageService {
         String[] ids=mapper.getRandomDocs(pages);
         User[] users=new User[ids.length];
         for(int i=0;i< ids.length;i++){
-            users[i]=mapper.getUserInfo(ids[i]);
+            users[i]=mapper.getUserInfo(Integer.parseInt(ids[i]));
         }
         return (new Gson()).toJson(users);
     }

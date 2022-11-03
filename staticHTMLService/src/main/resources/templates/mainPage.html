@@ -96,7 +96,6 @@
                     if(ajax.responseText=="401"){
                         setID("");
                     }else{
-                        console.log("rev:"+ajax.responseText)
                         setID(ajax.responseText);
                     }
                     document.getElementById("login__").click();
@@ -119,7 +118,7 @@
         <div class="button" id="randomPagesButton" @click="random()">获取</div>
         <div class="contents"></div>
         <items v-for="item in randomPages" :tulpas="item.tulpas" :hosts="item.hosts" :introduction="item.introduction"
-            :herf="herf">
+            :herf="herf"  @page_="page_(page)">
         </items>
         <div id="reflushP" @click="flush()"></div>
     </div>
@@ -171,26 +170,32 @@
             },
             methods: {
                 random() {
+                    console.log("random");
                     ajax.open("GET", "/mainpage/random/" + pages)
                     ajax.onreadystatechange = function () {
                         if (ajax.readyState == 4) {
+                            console.log("rand:"+ajax.responseText)
                             window.p = JSON.parse(ajax.responseText);
                             document.getElementById("reflushP").click();
                         }
                     }
+                    ajax.send();
                 },
                 flush() {
                     this.randomPages = window.p;
                 }
                 ,
-                page_() {
-                    alert("mew")
+                page_(page){
+                    console.log("page")
+                    console.log(page)
+                    window.open("/static/page/"+page.ID);
+                    //todo
                 }
             }
         });
         app2.component('items', {
             template:
-                `<div class="page" ">host:{{hosts}}<div class="bold"><br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
+                `<div class="page_"  v-on:click="$emit('page_')">host:{{hosts}}<div class="bold"><br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
             ,
             props: ["tulpas", "hosts", "hosts", "introduction"]
             , emits: ['page_']

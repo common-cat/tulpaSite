@@ -4,26 +4,18 @@ public class Doc {
     //文档状态码
     public String HTML;
     //文章内容
-    public int authorID;
+    public int id;
     //作者ID
     public String date;
     //提交日期
     //状态码
 
-    public String getHTML() {
-        return HTML;
+    public int getId() {
+        return id;
     }
 
-    public void setHTML(String HTML) {
-        this.HTML = HTML;
-    }
-
-    public int getAuthorID() {
-        return authorID;
-    }
-
-    public void setAuthorID(int authorID) {
-        this.authorID = authorID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDate() {
@@ -34,5 +26,11 @@ public class Doc {
         this.date = date;
     }
 
+    public String getHTML() {
+        return HTML;
+    }
 
+    public void setHTML(String HTML) {
+        this.HTML = HTML;
+    }
 }

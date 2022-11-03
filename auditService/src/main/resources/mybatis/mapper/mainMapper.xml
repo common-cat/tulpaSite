@@ -28,6 +28,9 @@
         select id from admins where id=#{id}
     </select>
     <select id="auditList" resultType="int">
-        select id form auditing_doc
+        select id from auditing_doc
+    </select>
+    <select id="getUserInfo" resultType="wiki.common_cat.auditService.entities.User">
+        select * from userinfo where id=${id};
     </select>
 </mapper>

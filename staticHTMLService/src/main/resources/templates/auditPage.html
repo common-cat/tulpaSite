@@ -1,15 +1,101 @@
-<html>
+<!DOCTYPE html>
+<!--导入thymeleaf的名称空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>登录</title>
+    <meta charset="UTF-8">
+    <title>审核</title>
     <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
-    <link th:href="@{/src/css/login.css}" type="text/css" rel="stylesheet">
 </head>
 
 <body>
     <script src="/src/js/vue_.js"></script>
     <script src="/src/js/login.js"></script>
     <script src="/src/js/main.js"></script>
+    <script>
+        function downloaded() {
+            document.getElementById("downloaded").click();
+        }
+        function download() {
+            ajax = new XMLHttpRequest();
+            ajax.open("POST", "/audit/aduitlist",true)
+            ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                    window.answers = JSON.parse(ajax.responseText);
+                    downloaded();
+                }
+            }
+            ajax.send("sessionID="+getSessionID());
+        }
+    </script>
+    <div id="main">
+        <div id="downloaded" @click="downloaded"></div>
+        <div class="button" id="last">上一页</div>
+        <div class="button" id="next">下一页</div>
+        <div class="button" id="total">{{nowpage}}/{{totalpage}}</div>
+        <pages id="pages" v-for="page in nows" :hosts="page.hosts" :tulpas="page.tulpas" :introduction="page.introduction" :id="page.ID" @page_="page_(page)">
+            
+        </pages>
+    </div>
+    <script>
+        pagesNum=6;
+        var app=Vue.createApp({
+            data(){
+                return{
+                    nows:[],
+                    nowpage:1,
+                    nowIdx:0,
+                    ps:[],
+                    totalpage:0
+                }
+            },
+            methods:{
+                next(){
+                    if(this.nowpage==this.totalpage){
+                        return;
+                    }
+                    if(this.nowpage<this.totalpage){
+                        this.nowpage++;
+                        this.nowIdx=0;
+                    }
+                    if(nowpage<totalpage-1){
+                        this.ps.copyWithin(this.nows,this.nowpage*pagesNum,this.nowpage*(pagesNum+1));
+                    }else{
+                        this.ps.copyWithin(this.nows,this.nowpage*pagesNum,this.totalpage%pagesNum);
+                    }
+                },
+                last(){
+                    if(this.nowpage>0){
+                        this.nowIdx=0;
+                        this.nowpage--;
+                    }
+                },
+                downloaded(){
+                    var r=window.answers;
+                    this.totalpage=r.totalpage;
+                    this.nows=window.answers;
+                    this.ps=r.ps;
+                    this.nowpage=1;
+                    this.totalpage=Math.ceil(r.length/pagesNum);
+                },
+                page_(page){
+                    console.log("page")
+                    console.log(page)
+                    window.open("/static/audit_page/"+page.ID);
+                    //todo
+                }
+            }
+        })
+        app.component('pages', {
+            template:
+                `<div class="page" v-on:click="$emit('page_')"><div class="bold">host:{{hosts}}<br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
+            ,
+            props: ["tulpas", "hosts", "introduction","id"]
+            , emits: ['page_']
+        });
+        app.mount("#main");
+        download();
     </script>
 </body>
 

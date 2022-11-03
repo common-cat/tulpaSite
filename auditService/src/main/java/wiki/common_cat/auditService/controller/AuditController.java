@@ -29,11 +29,11 @@ public class AuditController {
             service.accept(Integer.valueOf(id));
         }
     }
-    @GetMapping("/audit/aduitlist")
-    public int[] auditList(HttpServletRequest httpServletRequest){
+    @PostMapping("/audit/aduitlist")
+    public String auditList(HttpServletRequest httpServletRequest){
         if(service.isAdmin(httpServletRequest.getParameter("sessionID"))){
             return service.getAuditList();
         }
-        return new int[0];
+        return "";
     }
 }

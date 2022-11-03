@@ -13,7 +13,9 @@ public class MainPageServiceController {
     private MainPageService mainPageService;
     @GetMapping("/mainpage/random/{pages}")
     public String randomPages(@PathVariable("pages")int pages){
+        System.out.println("pages:"+mainPageService.randomPages(pages));
         return mainPageService.randomPages(pages);
+
         //TODO
     }
     //获取机页面

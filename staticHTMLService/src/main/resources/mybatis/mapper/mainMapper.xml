@@ -4,6 +4,6 @@
 
 <mapper namespace="wiki.common_cat.staticHTMLService.mapper.StaticMapper">
     <select id="getDoc" resultType="wiki.common_cat.staticHTMLService.entities.Doc">
-        select * from doc where id=#{id}
+        select * from audited_doc where id=#{id}
     </select>
 </mapper>

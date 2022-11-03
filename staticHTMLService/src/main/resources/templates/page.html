@@ -1,7 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>创作你的花名册</title>
     <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
     <link th:href="@{/src/css/login.css}" type="text/css" rel="stylesheet">
     <title th:text="${title}"></title>
@@ -11,7 +10,7 @@
 <script src="/src/js/vue_.js"></script>
 <script src="/src/js/login.js"></script>
 <script src="/src/js/main.js"></script>
-<div th:text="html"></div>
+<div th:utext="${html}"></div>
 </body>
 
 </html>

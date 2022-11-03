@@ -41,6 +41,12 @@ public class Controller {
     public String audit(){
         return "auditPage";
     }
+    @GetMapping("/static/audit_page/{id}")
+    public String auditPage(@PathVariable("id")String id,Model model){
+        model.addAttribute("id",id);
+        model.addAttribute("title",id+"的审核页面");
+        return "audit_page";
+    }
     @GetMapping("/static/page/{id}")
     public String page(@PathVariable("id")String id,Model model){
         Doc doc=service.getDoc(id);
