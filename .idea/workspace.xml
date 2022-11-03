@@ -10,21 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335e7224-8262-4952-a506-1661a3709458" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/SearchApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/controller/SearchController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/entities/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/mapper/SearchMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/service/SearchService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/service/impl/CommonSearchService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
