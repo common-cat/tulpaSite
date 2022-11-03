@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.common_cat.tool.mapper.IniMapper">
+    <insert id="ini">
+        create table users(id int primary key auto_increment,date varchar(32),salt int,pwdhash int,lastLoginDate bigint,status int,loginTimes int,email varchar(256));
+        create table pre_users(date varchar(32),salt int,pwdhash int,email varchar(256),tulpas text,hosts text);
+        create table doc (HTML longtext,id int,date varchar(32));
+        create table audited_doc (HTML longtext,id int,date varchar(32));
+        create table auditing_doc (HTML longtext,id int,date varchar(32));
+        create table admins (id int,pwdhash int,salt int);
+        create table userinfo (id int,isAudited int,introduction text,tulpas text,hosts text);
+    </insert>
+</mapper>

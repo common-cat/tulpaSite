@@ -5,30 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335e7224-8262-4952-a506-1661a3709458" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/audit_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/wiki/lplatform/api/InIDataBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/impl/CommonEmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tool/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tool/src/main/java/wiki/common_cat/tool/InIDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tool/src/main/java/wiki/common_cat/tool/mapper/IniMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tool/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tool/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/controller/AuditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/controller/AuditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/entities/Doc.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/entities/Doc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/mapper/AuditMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/mapper/AuditMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/AuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/AuditService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/impl/CommonAuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/impl/CommonAuditService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/controller/MainPageServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/controller/MainPageServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/mapper/MainPageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/mapper/MainPageMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/service/impl/CommonMainPageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/service/impl/CommonMainPageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signinServcie/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/controller/SourceServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/controller/SourceServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/auditPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/auditPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/wiki/lplatform/api/H.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/wiki/lplatform/api/Redis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/controller/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/controller/SignInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/impl/CommonSignInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/impl/CommonSignInService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signinServcie/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/searchPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/searchPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,26 +64,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Desktop/tulpasite/TulpaSite/staticHTMLService/src/main/resources/mybatis/mapper&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "C:/Users/Acer/Desktop/tulpasite/TulpaSite/tool/src/main/resources",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\tool\src\main\resources" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\staticHTMLService\src\main\resources\mybatis\mapper" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\searchService\src\main\resources\mybatis\mapper" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\searchService\src\main\resources" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\signinServcie\src\main\resources" />
-      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\auditService\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\privatePageService\src\main\resources\mybatis" />
@@ -104,7 +97,7 @@
       <recent name="wiki.common_cat.tokenService.service" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.GatewayApplication">
+  <component name="RunManager" selected="应用程序.InIDatabase">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="wiki.common_cat.staticHTMLService.Application" />
       <module name="staticHTMLService" />
@@ -118,12 +111,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.gate.GatewayApplication" />
-      <module name="gateway" />
+    <configuration name="InIDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.tool.InIDatabase" />
+      <module name="tool" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wiki.common_cat.gate.*" />
+          <option name="PATTERN" value="wiki.common_cat.tool.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,12 +150,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SourceServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.sourceService.SourceServiceApplication" />
-      <module name="sourceService" />
+    <configuration name="wiki.common_cat.signinService.service.impl.EmailService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.signinService.service.impl.EmailService" />
+      <module name="signinServcie" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wiki.common_cat.sourceService.*" />
+          <option name="PATTERN" value="wiki.common_cat.signinService.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -172,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.GatewayApplication" />
+        <item itemvalue="应用程序.InIDatabase" />
         <item itemvalue="应用程序.Application" />
-        <item itemvalue="应用程序.SourceServiceApplication" />
         <item itemvalue="应用程序.SignInApplication" />
         <item itemvalue="应用程序.SearchApplication" />
+        <item itemvalue="应用程序.wiki.common_cat.signinService.service.impl.EmailService" />
       </list>
     </recent_temporary>
   </component>

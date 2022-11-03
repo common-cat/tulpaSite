@@ -1,5 +1,7 @@
 package wiki.common_cat.signinService.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import wiki.common_cat.signinService.service.SignInService;
@@ -14,4 +16,10 @@ public class SignInController {
     public String commit(HttpServletRequest request){
         return service.signIn(request.getParameter("email"),request.getParameter("date"),request.getParameter("pwd"),request.getParameter("tulpas"),request.getParameter("hosts"));
     }
+    @GetMapping("/signin/verify/{url}")
+    public String verify(@PathVariable("url")String url){
+        return service.verify(url);
+    }
+    //wrong:cuowu
+    //id
 }

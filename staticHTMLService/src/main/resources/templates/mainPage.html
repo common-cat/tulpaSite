@@ -118,7 +118,7 @@
         <div class="button" id="randomPagesButton" @click="random()">获取</div>
         <div class="contents"></div>
         <items v-for="item in randomPages" :tulpas="item.tulpas" :hosts="item.hosts" :introduction="item.introduction"
-            :herf="herf"  @page_="page_(page)">
+            :herf="herf"  @page_="page_(item)">
         </items>
         <div id="reflushP" @click="flush()"></div>
     </div>
@@ -186,8 +186,6 @@
                 }
                 ,
                 page_(page){
-                    console.log("page")
-                    console.log(page)
                     window.open("/static/page/"+page.ID);
                     //todo
                 }

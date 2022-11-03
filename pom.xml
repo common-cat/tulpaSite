@@ -16,6 +16,7 @@
         <module>auditService</module>
         <module>privatePageService</module>
         <module>signinServcie</module>
+        <module>tool</module>
     </modules>
     <dependencies>
         <dependency>
