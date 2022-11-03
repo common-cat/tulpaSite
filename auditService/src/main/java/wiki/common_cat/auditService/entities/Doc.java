@@ -1,15 +1,13 @@
 package wiki.common_cat.auditService.entities;
 
 public class Doc {
-    public static final int WAITING_FOR_AUDIT=-1,AUDITING=-2,AUDIT_REJECT=0,AUDIT_ACCEPT=1,DELETED=2;
     //文档状态码
     public String HTML;
     //文章内容
-    public String authorID;
+    public int authorID;
     //作者ID
     public String date;
     //提交日期
-    public int status;
     //状态码
 
     public String getHTML() {
@@ -20,11 +18,11 @@ public class Doc {
         this.HTML = HTML;
     }
 
-    public String getAuthorID() {
+    public int getAuthorID() {
         return authorID;
     }
 
-    public void setAuthorID(String authorID) {
+    public void setAuthorID(int authorID) {
         this.authorID = authorID;
     }
 
@@ -36,11 +34,5 @@ public class Doc {
         this.date = date;
     }
 
-    public int getStatus() {
-        return status;
-    }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
 }

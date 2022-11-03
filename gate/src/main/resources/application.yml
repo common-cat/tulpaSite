@@ -47,6 +47,18 @@ spring:
           uri: lb://PRIVATEPAGESERVICE
           predicates:
             - Path=/private/**
+        - id: audit
+          uri: lb://AUDITSERVICE
+          predicates:
+            - Path=/audit/**
+        - id: signin
+          uri: lb://SIGNINSERVICE
+          predicates:
+            - Path=/signin/**
+        - id: search
+          uri: lb://SEARCHSERVICE
+          predicates:
+            - Path=/search
 eureka:
   instance:
     instance-id: gate

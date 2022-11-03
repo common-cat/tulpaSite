@@ -6,16 +6,15 @@ import wiki.common_cat.sourceService.entities.Image;
 
 @Mapper
 public interface SourceMapper {
-    String isAdmin(String id);
-    Doc getDoc(String authorID);
-    Image getImage(String imageID);
-    String imageExist(int hash);
-    void setDoc(String HTML,String authorID,String date,int status);
-    void deleteDoc(String authorID);
-    void setImage(String imageID,byte[] file,String date,int hash);
-    void deleteImage(String authorID,String image);
-    String docExist(String authorID);
-    void updateDoc(String HTML,String authorID,String date,int status);
-    void completeDOC(String authorID);
-    String getAuditedDoc(String id);
+    String isAdmin(int id);
+    Doc getDoc(int id);
+    Image getImage(String imgTable,int imageID);
+    String imageExist(String imgTable,int hash);
+    void setDoc(String HTML,int authorID);
+    void deleteDoc(int id);
+    void setImage(String imgTable,byte[] file,int hash);
+    String docExist(int authorID);
+    void updateDoc(String HTML,int id);
+    String getAuditedDoc(int id);
+    int getImageID();
 }

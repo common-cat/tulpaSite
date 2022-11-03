@@ -14,7 +14,7 @@ spring:
   datasource:
     username: root        #数据库登陆用户名
     password: 123456        #数据库登陆密码
-    url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false    #数据库url
+    url: jdbc:mysql://localhost:3306/tulpa?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false    #数据库url
     driver-class-name: com.mysql.cj.jdbc.Driver                  #数据库驱动
 ############################### 不检查 spring.config.import=configserver:##################
 #  cloud:

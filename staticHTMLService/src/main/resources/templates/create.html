@@ -27,6 +27,7 @@
     </div>
     <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
     <script>
+
         const { createEditor, createToolbar } = window.wangEditor
 
         const editorConfig = {
@@ -54,7 +55,7 @@
                     }
                     //TODO
                     ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                    ajax.send("sessionID="+getSessionID()+ '&image=' + image);
+                    ajax.send("sessionID=" + getSessionID() + '&image=' + image);
                 }
             }
         }
@@ -82,14 +83,14 @@
                 methods: {
                     submit() {
                         var ajax = new XMLHttpRequest();
-                        ajax.open('POST', '/audit/commit'+"?sessionID="+getSessionID(), true);
+                        ajax.open('POST', '/audit/commit', true);
                         ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                         ajax.onreadystatechange = function () {
                             if (ajax.readyState == 4) {
                                 alert("已进入审核队列，结果将通过邮件通知，如果一直没收到邮件，可以查看邮箱‘垃圾箱’")
                             }
                         }
-                        ajax.send("token=" +getCookie("token"));
+                        ajax.send("sessionID=" + getSessionID());
                     },
                     save() {
                         var ajax = new XMLHttpRequest();
@@ -100,7 +101,7 @@
                                 alert("已保存！")
                             }
                         }
-                        ajax.send("html=" + editor.getHtml()+"&sessionID="+getSessionID());
+                        ajax.send("html=" + editor.getHtml() + "&sessionID=" + getSessionID());
                     }
                 }
             }
@@ -108,10 +109,14 @@
         app.mount("#sub");
         function download() {
             var ajax = new XMLHttpRequest();
-            ajax.open('GET', '/source/doc/' + "0"+"?sessionID="+getSessionID(), true);
+            console.log("id:"+getID())
+            ajax.open('GET', '/source/doc/' + getID() + "?sessionID=" + getSessionID(), true);
             ajax.onreadystatechange = function () {
                 if (ajax.readyState == 4) {
-                    doc=JSON.parse(ajax.responseText);
+                    if (ajax.responseText == "401") {
+                        setID("0");
+                    }
+                    doc = JSON.parse(ajax.responseText);
                     editor.setHtml(doc.HTML);
                 }
             }

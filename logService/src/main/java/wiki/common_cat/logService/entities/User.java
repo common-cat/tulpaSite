@@ -1,7 +1,7 @@
 package wiki.common_cat.logService.entities;
 
 public class User {
-    private String id;
+    private int id;
     private String date;
     private int salt;
     private int pwdhash;
@@ -37,11 +37,11 @@ public class User {
         this.loginTimes = loginTimes;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -95,5 +95,8 @@ public class User {
     public boolean isRightPWD(String pwd){
         int hash_=(pwd+getSalt()).hashCode();
         return hash_==getPwdhash();
+    }
+    public String toString(){
+        return "id:"+id+"\npwdhash:"+pwdhash+"\nsalt:"+salt;
     }
 }

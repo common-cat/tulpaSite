@@ -13,7 +13,61 @@
     <script src="/src/js/vue_.js"></script>
     <script src="/src/js/login.js"></script>
     <script src="/src/js/main.js"></script>
-    
+    <div class="contents" id="main">
+        <h4>邮箱</h4>
+        <input type="text"  class="input" v-model="email">
+        <h4>密码</h4>
+        <input type="password" v-model="pwd" class="input">
+        <h4>重复密码</h4>
+        <input type="password" v-model="repwd" class="input">
+        <h4>HOSTs(以逗号分隔)</h4>
+        <input type="text" v-model="hosts" class="input">
+        <h4>TULPAs(以逗号分隔)</h4>
+        <input type="text" id="tulpas" v-model="tulpas" class="input"><br>
+        <div class="button" @click="submit()">提交</div>
+    </div>
+    <script>
+        var app=Vue.createApp({
+            data(){
+                return{
+                    email:"",
+                    pwd:"",
+                    repwd:"",
+                    hosts:"",
+                    tulpas:""
+                }
+            }
+            ,
+            methods:{
+                submit(){
+                    console.log("mew:"+this.email);
+                    var ajax=new XMLHttpRequest();
+                    ajax.open("POST","/signin/commit/");
+                    ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    if(this.email==""||this.pwd==""||this.repwd==""||this.hosts==""||this.tulpas==""){
+                        alert("请填写所有项目");
+                        return;
+                    }
+                    /*if(!this.email.match("\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}")){
+                        alert("邮箱格式错误");
+                        return;
+                    }*/
+                    if(this.pwd!=this.repwd){
+                        alert("两次密码输入不一致");
+                        return;
+                    }
+                    ajax.send("email="+this.email+"&pwd="+this.pwd+"&repwd="+this.repwd+"&hosts="+this.hosts+"&tulpas="+this.tulpas);
+                    ajax.onreadystatechange = function () {
+                            if (ajax.readyState == 4) {
+                                alert("成功提交！")
+                                window.close();
+                            }
+                        }
+                }
+            }
+        })
+        app.mount("#main")
+    </script>
 </body>
 
 </html>

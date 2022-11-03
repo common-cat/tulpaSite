@@ -32,6 +32,7 @@ public class SourceServiceController {
     @PostMapping("/source/upload-doc")
     public void setDoc(HttpServletRequest httpServletRequest){
         String sessionID=httpServletRequest.getParameter("sessionID");
+        System.out.println(sessionID);
         sourceService.setDoc(httpServletRequest.getParameter("html"),sessionID);
     }
     @PostMapping("/source/upload-image")
@@ -47,9 +48,5 @@ public class SourceServiceController {
     @PostMapping("/source/del-image/{id}/{imageID}")
     public void deleteImage(HttpServletRequest httpServletRequest,@PathVariable("musicID")String imageID){
         sourceService.deleteImage(httpServletRequest.getParameter("sessionID"),imageID);
-    }
-    @PostMapping("/source/complete_doc")
-    public String completeDOC(HttpServletRequest httpServletRequest){
-        return sourceService.completeDOC(httpServletRequest.getSession().getId());
     }
 }

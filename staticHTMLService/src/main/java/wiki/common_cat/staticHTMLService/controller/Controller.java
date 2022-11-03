@@ -12,20 +12,18 @@ public class Controller {
     @Resource(name = "commonStaticHTMLService")
     private StaticHTMLService service;
     @GetMapping("/static/search")
-    public ModelAndView search(HttpServletRequest httpServletRequest){
-        String q=httpServletRequest.getParameter("q");
-        ModelAndView modelAndView=new ModelAndView("searchPage");
-        modelAndView.addObject("q",q);
-        return modelAndView;
+    public String search(HttpServletRequest httpServletRequest,Model model){
+        model.addAttribute("q",httpServletRequest.getParameter("q"));
+        return "searchPage";
     }
-    @GetMapping("/")
+    @GetMapping("/static/main")
     public String main(){
         return "mainPage";
     }
 
     @GetMapping("/static/signin")
     public String signIn(){
-        return "signPage";
+        return "signinPage";
     }
     @GetMapping("/static/login")
     public String loginIn(){
@@ -37,5 +35,9 @@ public class Controller {
     public String privatePage(@PathVariable("id")String id,Model model){
         model.addAttribute("title",id+"的页面");
         return "privatePage";
+    }
+    @GetMapping("/static/audit")
+    public String audit(){
+        return "auditPage";
     }
 }

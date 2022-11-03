@@ -15,7 +15,7 @@ public class PrivatePageController {
     private PrivatePageService privatePageService;
     @GetMapping("/private/userinfo/{id}")
     public String getUserInfo(@PathVariable("id") String id){
-        return privatePageService.getUserInfo(id);
+        return privatePageService.getUserInfo(Integer.valueOf(id));
     }
     @PostMapping("/private/setuserinfo")
     public void setUserInfo(HttpServletRequest request){

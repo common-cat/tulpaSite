@@ -1,7 +1,7 @@
 function getCookie(name) {
     var arr = document.cookie.match(new RegExp(name + "=\\w+;?", "g"));
     if (arr != null) {
-        return arr[0].split("=")[1];
+        return arr[0].split("=")[1].replace(";","");
     }
     return null;
 }

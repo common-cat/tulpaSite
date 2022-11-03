@@ -44,14 +44,12 @@
                                     res=JSON.parse(text);
                                     setID(res.id);
                                     setSessionID(res.sessionID);
-                                    window.close();
                                 }
 
                             }
                         }
                         var user = this.user;
                         var pwd = this.pwd;
-                        //14位ID
                         m = user.match("\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}")
                         if (m != null) {
                             ajax.open("POST", "/login/email");

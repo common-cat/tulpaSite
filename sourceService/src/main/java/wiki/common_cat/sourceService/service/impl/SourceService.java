@@ -16,9 +16,9 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
     @Autowired
     private SourceMapper sourceMapper;
     @Override
-    public void deleteDoc(String token) {
-        String id="0";
-        sourceMapper.deleteDoc(id);
+    public void deleteDoc(String sessionID) {
+        String id=jedis.get(sessionID);
+        sourceMapper.deleteDoc(Integer.valueOf(id));
     }
 
     @Override
@@ -27,11 +27,10 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
         try{
             realID=jedis.get(sessionID);
         }catch (Exception e){
-
         }
-        Doc doc=sourceMapper.getDoc(id);
+        Doc doc=sourceMapper.getDoc(Integer.parseInt(realID));
         try{
-        if(realID.equals(id)||((sourceMapper.isAdmin(realID)!=null))||doc.status==Doc.AUDIT_ACCEPT){
+        if(realID.equals(id)||((sourceMapper.isAdmin(Integer.valueOf(realID))!=null))){
             return (new Gson()).toJson(doc);
         }
         }catch (Exception e) {
@@ -43,44 +42,41 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
     @Override
     public void setDoc(String html,String sessionID) {
         String id=jedis.get(sessionID);
-        if(sourceMapper.docExist(id)==null){
-            sourceMapper.setDoc(html,id,(new Date()).toString(), Doc.WAITING_FOR_AUDIT);
+        if(sourceMapper.docExist(Integer.valueOf(id))==null){
+            sourceMapper.setDoc(html,Integer.valueOf(id));
         }else {
-            sourceMapper.updateDoc(html,id,(new Date()).toString(), Doc.WAITING_FOR_AUDIT);
+            sourceMapper.updateDoc(html,Integer.valueOf(id));
         }
     }
     @Override
-    public String setImage( String base64,String sessionID) {
+    public String setImage(String base64,String sessionID) {
         String id=jedis.get(sessionID);
         String imageID;
-        String flag=sourceMapper.imageExist(base64.hashCode());
+        String flag=sourceMapper.imageExist(id+"img",base64.hashCode());
         if(flag==null){
-            imageID=id+"-"+System.nanoTime()+(new Random()).nextFloat();
-            sourceMapper.setImage(imageID, Base64.getDecoder().decode(base64.replaceAll(" ","+")),(new Date()).toString(),base64.hashCode());
+            sourceMapper.setImage(id+"img", Base64.getDecoder().decode(base64.replaceAll(" ","+")),base64.hashCode());
+            imageID=id+"-"+sourceMapper.getImageID();
         }else {
             imageID=flag;
         }
-        return "/source/image/"+imageID;
+        return "/source/image/"+id+"-"+imageID;
     }
 
     @Override
     public byte[] getImage(String imageID) {
-        return sourceMapper.getImage(imageID).getFile();
+
+        return sourceMapper.getImage(imageID.split("-")[0]+"img",Integer.valueOf(imageID.split("-")[1])).getFile();
     }
 
 
     @Override
     public void deleteImage(String id, String imageID) {
-        sourceMapper.deleteImage(id,imageID);
+
     }
-    public String completeDOC(String sessionID){
-        String id=jedis.get(sessionID);
-        sourceMapper.completeDOC(id);
-        return "";
-    }
+
 
     @Override
     public String getAuditedDoc(String id) {
-        return sourceMapper.getAuditedDoc(id);
+        return sourceMapper.getAuditedDoc(Integer.valueOf(id));
     }
 }

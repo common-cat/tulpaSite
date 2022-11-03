@@ -8,6 +8,5 @@ public interface SourceService {
     String setImage(String base64,String sessionID);
     byte[] getImage(String imageID);
     void deleteImage(String id, String imageID);
-    String completeDOC(String sessionID);
     String getAuditedDoc(String id);
 }

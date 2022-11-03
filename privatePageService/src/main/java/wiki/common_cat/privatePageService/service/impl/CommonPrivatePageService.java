@@ -12,8 +12,7 @@ public class CommonPrivatePageService implements PrivatePageService {
     private PrivatePageMapper mapper;
     private Jedis jedis=new Jedis("localhost");
     @Override
-    public String getUserInfo(String id) {
-        System.out.println("mapper:"+mapper.getUserInfo(id));
+    public String getUserInfo(int id) {
         return (new Gson()).toJson(mapper.getUserInfo(id));
     }
 
@@ -24,6 +23,6 @@ public class CommonPrivatePageService implements PrivatePageService {
         if(id==null){
             return;
         }
-        mapper.setUserInfo(id,tulpas,hosts,introduction);
+        mapper.setUserInfo(Integer.valueOf(id),tulpas,hosts,introduction);
     }
 }

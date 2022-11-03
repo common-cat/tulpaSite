@@ -1,9 +1,9 @@
 package wiki.common_cat.auditService.service;
 
 public interface AuditService {
-    void commit(String id);
-    void reject(String id);
-    void accept(String id);
+    void commit(String sessionID);
+    void reject(int id);
+    void accept(int id);
     boolean isAdmin(String sessionID);
-    String[] getAuditList();
+    int[] getAuditList();
 }

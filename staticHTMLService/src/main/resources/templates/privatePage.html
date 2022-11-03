@@ -45,10 +45,10 @@
                     this.introduction = window.introduction;
                 },
                 upload() {
-                    sessionID=getSessionID(),
-                    tulpas=this.tulpas,
-                    hosts=this.hosts,
-                    introduction=this.introduction
+                    sessionID = getSessionID()
+                    tulpas = this.tulpas
+                    hosts = this.hosts
+                    introduction = this.introduction
                     ajax.onreadystatechange = function () {
                         if (ajax.readyState == 4) {
                             flush();
@@ -57,7 +57,7 @@
                     }
                     ajax.open("POST", "/private/setuserinfo", true);
                     ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                    ajax.send("sessionID="+sessionID+"&tulpas="+tulpas+"&hosts="+hosts+"&introduction="+introduction);
+                    ajax.send("sessionID=" + sessionID + "&tulpas=" + tulpas + "&hosts=" + hosts + "&introduction=" + introduction);
                 },
                 open() {
                     window.open("/static/create");

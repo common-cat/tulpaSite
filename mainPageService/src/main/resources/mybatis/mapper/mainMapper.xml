@@ -4,7 +4,7 @@
 
 <mapper namespace="wiki.common_cat.mainPageService.mapper.MainPageMapper">
     <select id="getRandomDocs" resultType="string">
-        select authorID from audited_doc WHERE authorID >= (SELECT floor(RAND() * (SELECT MAX(authorID) FROM audited_doc))) ORDER BY authorID LIMIT ${pages}
+        select id from audited_doc WHERE id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM audited_doc))) ORDER BY id LIMIT ${pages}
     </select>
     <select id="getUserInfo" resultType="wiki.common_cat.mainPageService.entities.User">
         select * from userinfo where id=${id};

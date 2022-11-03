@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/adminService/pom.xml" />
         <option value="$PROJECT_DIR$/editService/pom.xml" />
         <option value="$PROJECT_DIR$/outerGate/pom.xml" />
+        <option value="$PROJECT_DIR$/signService/pom.xml" />
         <option value="$PROJECT_DIR$/tokenServcie/pom.xml" />
       </set>
     </option>

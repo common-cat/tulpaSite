@@ -4,36 +4,36 @@
 
 <mapper namespace="wiki.common_cat.sourceService.mapper.SourceMapper">
     <select id="getDoc" resultType="wiki.common_cat.sourceService.entities.Doc">
-        select * from doc where authorID=#{authorID}
+        select * from doc where id=#{id}
     </select>
     <select id="imageExist" resultType="string">
-        select imageID from images where hash=#{hash}
+        select imageID from ${imgTable} where hash=${hash}
     </select>
     <select id="getImage" resultType="wiki.common_cat.sourceService.entities.Image">
-        select * from images where imageID=#{imageID}
+        select * from ${imgTable} where imageID=#{imageID}
     </select>
     <select id="docExist" resultType="string">
-        select authorID from doc where authorID=#{authorID}
+        select id from doc where id=${id}
     </select>
     <insert id="setDoc">
-        insert into doc (HTML,authorID,date,status) values (#{HTML},#{authorID},NOW(),#{status})
+        insert into doc (HTML,id,date) values (#{HTML},${id},NOW())
     </insert>
     <select id="isAdmin" resultType="string">
-        select id from admins where id=#{id}
+        select id from admins where id=${id}
     </select>
     <update id="updateDoc">
-        update doc set HTML=#{HTML},authorID=#{authorID},date=#{date},status=#{status} where authorID=#{authorID}
+        update doc set HTML=#{HTML},id=${id},date=NOW() where id=#{id}
     </update>
     <sql id="deleteDoc">
 
     </sql>
     <insert id="setImage">
-        insert into images (imageID,file,date,hash) values (#{imageID},#{file},#{date},#{hash})
+        insert into ${imgTable} (file,date,hash) values (#{file},NOW(),#{hash})
     </insert>
+    <select id="getImageID" resultType="int">
+        SELECT LAST_INSERT_ID()
+    </select>
     <sql id="deleteImage">
 
     </sql>
-    <update id="completeDOC">
-        update doc set status=-2 where authorID=#{authorID}
-    </update>
 </mapper>

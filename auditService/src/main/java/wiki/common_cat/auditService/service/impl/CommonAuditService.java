@@ -12,31 +12,31 @@ public class CommonAuditService implements AuditService {
     private AuditMapper mapper;
     private Jedis jedis=new Jedis("localhost");
     @Override
-    public void commit(String id) {
-        Doc srcDoc= mapper.getDoc(id);
-        mapper.auditDoc(srcDoc.HTML,srcDoc.authorID,srcDoc.status);
+    public void commit(String sessionID) {
+        Doc srcDoc= mapper.getDoc(Integer.valueOf(jedis.get(sessionID)));
+        mapper.auditDoc(srcDoc.HTML,srcDoc.authorID);
     }
 
     @Override
-    public void reject(String id) {
-        mapper.rejectDoc(id);
+    public void reject(int id) {
+        mapper.rejectDoc(Integer.valueOf(id));
     }
 
     @Override
-    public void accept(String id) {
-        Doc doc= mapper.getAuditingDoc(id);
-        mapper.acceptDoc(doc.HTML,id, doc.status);
-        mapper.delAuditDoc(id);
+    public void accept(int id) {
+        Doc doc= mapper.getAuditingDoc(Integer.valueOf(id));
+        mapper.acceptDoc(doc.HTML,Integer.valueOf(id));
+        mapper.delAuditDoc(Integer.valueOf(id));
     }
 
     @Override
     public boolean isAdmin(String sessionID) {
         String realID=jedis.get(sessionID);
-        return mapper.isAdmin(realID)!=null;
+        return mapper.isAdmin(Integer.valueOf(realID))!=null;
     }
 
     @Override
-    public String[] getAuditList() {
+    public int[] getAuditList() {
         return mapper.auditList();
     }
 }

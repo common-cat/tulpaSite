@@ -13,27 +13,27 @@ import javax.servlet.http.HttpServletRequest;
 public class AuditController {
     @Resource(name = "commonAuditService")
     private AuditService service;
-    @GetMapping("/audit/commit/{id}")
-    public void commit(@PathVariable("id")String id){
-        service.commit(id);
+    @PostMapping("/audit/commit")
+    public void commit(HttpServletRequest request){
+        service.commit(request.getParameter("sessionID"));
     }
     @PostMapping("/audit/reject/{id}")
     public void reject(HttpServletRequest httpServletRequest,@PathVariable("id")String id){
         if(service.isAdmin(httpServletRequest.getParameter("sessionID"))){
-            service.reject(id);
+            service.reject(Integer.valueOf(id));
         }
     }
     @PostMapping("/audit/accept/{id}")
     public void accept(HttpServletRequest httpServletRequest,@PathVariable("id")String id){
         if(service.isAdmin(httpServletRequest.getParameter("sessionID"))){
-            service.accept(id);
+            service.accept(Integer.valueOf(id));
         }
     }
     @GetMapping("/audit/aduitlist")
-    public String[] auditList(HttpServletRequest httpServletRequest){
+    public int[] auditList(HttpServletRequest httpServletRequest){
         if(service.isAdmin(httpServletRequest.getParameter("sessionID"))){
             return service.getAuditList();
         }
-        return new String[0];
+        return new int[0];
     }
 }

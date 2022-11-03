@@ -5,245 +5,90 @@
 <head>
     <meta charset="UTF-8">
     <title>搜索</title>
-    <link th:href="@{src/css/main.css}" type="text/css" rel="stylesheet">
-    <link th:href="@{src/css/search.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/src/css/search.css}" type="text/css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div id="header">
-            <div id="user" :class="{display: hidden}">
-                <img class="userIcon" id="headIcon" v-bind:src="imgSrc">
-            </div>
-            <div id="login" class="button" @click="login">
-                登录
-            </div>
-            <div id="signin" class="button" @click="signin">
-                注册
-            </div>
-            <div id="logout" class="button" @click="logout">
-                登出
-            </div>
-            <div id="connecting" class="button" @click="connecting">
-                联系开发者
-            </div>
-            <div class="vue" id="logout_" @click="logout">
-
-            </div>
-        </div>
-    </header>
+    <script src="/src/js/vue_.js"></script>
+    <script src="/src/js/login.js"></script>
+    <script src="/src/js/main.js"></script>
+    <div id="q" th:text="${q}" style="display: none;"></div>
     <script>
-        window.onblur=function(){
-            loginbyToken(getCookie("token"));
+        function searched() {
+            document.getElementById("searched").click();
+        }
+        function search() {
+            ajax = new XMLHttpRequest();
+            ajax.open("POST", "/search",true)
+            ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                    window.answers = JSON.parse(ajax.responseText);
+                    searched();
+                }
+            }
+            ajax.send("q="+document.getElementById("q").innerHTML)
         }
     </script>
+    <div id="main">
+        <div id="searched" @click="searched"></div>
+        <div class="button" id="last">上一页</div>
+        <div class="button" id="next">下一页</div>
+        <div class="button" id="total">{{nowpage}}/{{totalage}}</div>
+        <pages id="pages" v-for="page in nows" :hosts="page.hosts" :tulpas="page.tulpas" :introduction="page.introduction" :id="page.id">
+            
+        </pages>
+    </div>
     <script>
-        var headerApp=Vue.createApp(
-            {
-                data(){
-                    return{
-                        imgSrc:"",
-                        isLogin:false,
-                        hidden:true
-                    }
-                },
-                methods:{
-                    login(){
-                        window.open("static/login");
-                    },
-                    signin(){
-                        window.open("static/signin");
-                    },
-                    logout(){
-                        delCookie("token");
-                        delCookie("userName");
-                        hidden=true;
-                        isLogin=false;
-                    },
-                    connecting(){
-                        
-                    }
-                }
-            }
-        );
-        headerApp.mount("#header");
-    </script>
-    <div class="data" th:text="${p}"></div>
-    <div id="searchBind">
-        <input id="search" v-model="searchdata" type="text" @input="searchdatachanged()" @keyup.enter.native="search()">
-        <searchitems v-for="item in items" :item="item" @item_="item_(item)"></searchitems>
-    </div>
-    <hr>
-    <div id="content">
-        <pageitems v-for="item in pageitems_" :title="item.title" :id="item.id" :content="item.content"
-            :vote="item.vote" @itemin="itemin(id)"></pageitems>
-        <div id="chooseitems" @click="chooseitems()"></div>
-    </div>
-    <div id="pagesbar">
-        <div id="flushbar" @click="flushbar()"></div>
-        <div class="button" @nextpage="nextpage()">上一页</div>
-        <pagesbaritems v-for="item in items" :item="item" @pagein="pagein(item)">
-        </pagesbaritems>
-        <div class="button" @lastpage="lastpage()">下一页</div>
-    </div>
-    <script src="/src/js/vue_.js"></script>
-    <script>
-        var pageItems = 10;
-        //一页页面数目
-        var pagesbarnum = 7;
-        //显示页面选项的数量
-        var ajax = new XMLHttpRequest()
-        document.getElementById("flushbar").click();
-        window.searchdata = "";
-        window.page=1;
-        var app1 = Vue.createApp(
-            {
-                data() {
-                    return {
-                        items: [],
-                        searchdata: ""
-                    }
-                },
-                methods: {
-                    searchdatachanged() {
-                        var items = this.items;
-                        ajax.open("GET", "http://" + window.location.host+ "/api/recommend/" + this.searchdata);
-                        ajax.send();
-                        ajax.onreadystatechange = function () {
-                            if (ajax.readyState == 4) {
-                                if (ajax.status == 200) {
-                                    let data = JSON.parse(ajax.responseText);
-                                    var options = [];
-                                    for (var key in data) {
-                                        options.push(data[key]);
-                                    }
-                                    items.length = 0;
-                                    for (var i = 0; i < options.length; i++) {
-                                        items.push(options[i]);
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    item_(item) {
-                        this.searchdata = item;
-                        window.searchdata = item;
-                    }
-                    ,
-                    //上传改变的搜索框内的内容并且获得新的下拉框内容
-                    search() {
-                        window.location.href = "http://" + window.location.host + "/static/search" + "?" + "q=" + this.searchdata;
-                    }
-                    //上传搜索的内容
-                }
-            }
-        );
-        app1.component(
-            'searchitems',
-            {
-                template:
-                    `<div class="item" v-on:click="$emit('item')">{{item}}<br></div>`
-                , emits:
-                    ["searchdatachanged", "item_", "search"]
-                , props:
-                    ["item", "id"]
-            }
-        )
-        app1.mount("#searchBind");
-        var app2 = Vue.createApp({
-            data() {
-                return {
-                    total: 0,
-                    //全部页面总数
-                    cof: "",
-                    //页面当前搜索结果缓存编码
-                    pageitems_: [],
-                    //页面内的可选元素
+        pagesNum=6;
+        var app=Vue.createApp({
+            data(){
+                return{
+                    nows:[],
+                    nowpage:0,
+                    nowIdx:0,
+                    ps:[],
+                    totalpage:0
                 }
             },
-            methods: {
-                itemin(id) {
-                    window.location.href = "http://" + window.location.host + "/page?id=" + id;
+            methods:{
+                next(){
+                    if(this.nowpage<this.totalpage){
+                        this.nowpage++;
+                        this.nowIdx=0;
+                    }
+                    if(nowpage<totalpage-1){
+                        this.ps.copyWithin(this.nows,this.nowpage*pagesNum,this.nowpage*(pagesNum+1));
+                    }else{
+                        this.ps.copyWithin(this.nows,this.nowpage*pagesNum,this.totalpage%pagesNum);
+                    }
                 },
-                chooseitems() {
-                    if (this.total < window.page || window.page < 0) {
-                        return;
+                last(){
+                    if(this.nowpage>0){
+                        this.nowIdx=0;
+                        this.nowpage--;
                     }
-                    ajax.open("GET", "http://" + window.location.host + "/search/contents" + "?cof=" + this.cof + "&q=" + window.searchdata + "&page=" + window.page);
-                    ajax.send();
-                    ajax.onreadystatechange = function () {
-                        if (ajax.readyState == 4) {
-                            if (ajax.status == 200) {
-                                let data = JSON.parse(ajax.responseText);
-                                this.cof = data.cof;
-                                this.total = data.total;
-                                var options = [];
-                                for (var key in data.data) {
-                                    options.push(data[key]);
-                                }
-                                this.pageitems_.length = 0;
-                                for (var i = 0; i < options.length; i++) {
-                                    this.pageitems_.push(options[i]);
-                                }
-                            }
-                        }
-                    }
+                },
+                searched(){
+                    var r=window.answers;
+                    this.totalpage=r.totalpage;
+                    this.nows=window.answers;
+                    this.ps=r.ps;
+                    this.nowpage=0;
+                    this.totalpage=Math.ceil(r.length/pagesNum);
                 }
             }
+        })
+        app.component('pages', {
+            template:
+                `<div class="contents">host:{{hosts}}<div class="bold"><br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
+            ,
+            props: ["tulpas", "hosts", "hosts", "introduction"]
+            , emits: ['page_']
         });
-        app2.component(
-            'pageitems',
-            {
-                template:
-                    `<div class="pageitem" v-on:click="pagein"><div>{{title}}</div><div>{{content}}</div><div>{{vote}}</div></div>`
-                , emits:
-                    ["pagein"]
-                , props:
-                    ["title", "content", "vote"]
-            }
-        )
-        app2.mount("#content");
-        var app3 = Vue.createApp(
-            {
-                data() {
-                    return {
-                        pagesbar: 0,
-                        //页面内的目前的页码对象
-                        pagesbaritems: 0,
-                        //总页面数量
-                        items:[]
-                    }
-                },
-                methods: {
-                    nextpage(){
-                        if(windpw.page<this.pagesbaritems){
-                            window.page++;
-                            this.pagesbar++;
-                        }
-                    },
-                    lastpage(){
-
-                    },
-                    flushbar() {
-
-                    }
-                }
-            }
-        )
-        app3.component(
-            'pagesbaritems',
-            {
-                template:
-                    `<div class="baritem">{{p}}</div>`
-                ,
-                emits:
-                    ["pagein"]
-                ,
-                props:
-                    []
-            }
-        )
-        app3.mount("#pagesbar");
+        app.mount("#main");
+        search();
     </script>
 </body>
 

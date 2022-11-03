@@ -10,12 +10,12 @@
         <module>gate</module>
         <module>staticHTMLService</module>
         <module>logService</module>
-        <module>signService</module>
         <module>mainPageService</module>
         <module>searchService</module>
         <module>sourceService</module>
         <module>auditService</module>
         <module>privatePageService</module>
+        <module>signinServcie</module>
     </modules>
     <dependencies>
         <dependency>

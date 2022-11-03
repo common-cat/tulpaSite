@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>TULPA花名册</title>
-    <link th:href="@{src/css/main.css}" type="text/css" rel="stylesheet">
-    <link th:href="@{src/css/index.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/src/css/index.css}" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
             <div id="user" :class="{display: hidden}">
                 <img class="userIcon" id="headIcon" v-bind:src="imgSrc">
             </div>
-            <div id="login" class="button" @click="login">
+            <div id="login" class="button" @click="login_">
                 登录
             </div>
             <div id="signin" class="button" @click="signin">
@@ -30,46 +30,83 @@
             <div id="connecting" class="button" @click="connecting">
                 联系开发者
             </div>
+            <div id="login_" class="button" @click="info">{{login}}</div>
+            <div id="login__" @click="flushLog"></div>
             <div class="vue" id="logout_" @click="logout">
 
             </div>
         </div>
     </header>
     <script>
-        window.onblur = function () {
-            loginbyToken(getCookie("token"));
-        }
-    </script>
-    <script>
         var headerApp = Vue.createApp(
             {
                 data() {
                     return {
+                        login: "未登录",
                         imgSrc: "",
                         isLogin: false,
                         hidden: true
                     }
                 },
                 methods: {
-                    login() {
-                        window.open("static/login");
+                    login_() {
+                        window.open("/static/login");
                     },
                     signin() {
-                        window.open("static/signin");
+                        window.open("/static/signin");
                     },
                     logout() {
-                        delCookie("token");
-                        delCookie("userName");
-                        hidden = true;
-                        isLogin = false;
+                        setSessionID("");
+                        setID("");
+                        this.isLogin = false;
+                        flushLog();
                     },
+                    flushLog() {
+                        console.log("id:"+getID())
+                        if (getID() == ""||getID() == null) {
+                            this.login = "未登录";
+                            this.isLogin=false;
+                        } else {
+                            this.isLogin=true;
+                            this.login = "欢迎" + getID() + "|设置";
+                        }
+                    }
+                    ,
+                    info() {
+                        if (this.isLogin) {
+                            window.open("/static/private/" + getID());
+                        } else {
+                            window.open("/static/login");
+                        }
+                    }
+                    ,
                     connecting() {
-
+                        alert("联系")
                     }
                 }
             }
         );
         headerApp.mount("#header");
+        function flushLog() {
+            ajax = new XMLHttpRequest();
+            ajax.open("POST", "/login/sessionID/");
+            ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) { 
+                    if(ajax.responseText=="401"){
+                        setID("");
+                    }else{
+                        console.log("rev:"+ajax.responseText)
+                        setID(ajax.responseText);
+                    }
+                    document.getElementById("login__").click();
+                }
+            }
+            ajax.send("sessionID=" + getSessionID());
+        }
+        window.onblur = function () {
+            flushLog();
+        }
     </script>
     <h1 class="title" id="mainTitle">
         TULPA花名册
@@ -88,9 +125,10 @@
     </div>
     <div id="create" class="button">
 
-        <div @click="create_">点击这里创建你自己的页面!</div>
+        <div @click="create_">点击这里编辑你自己的页面!</div>
     </div>
     <script>
+
         var ajax = new XMLHttpRequest()
         var app = Vue.createApp(
             {
@@ -101,7 +139,7 @@
                 },
                 methods: {
                     search() {
-                        window.location.href = "http://" + window.location.host + "/static/search" + "?" + "q=" + this.searchdata;
+                        window.open("/static/search" + "?" + "q=" + this.searchdata);
                     }
                     //上传搜索的内容
                 }
@@ -141,8 +179,8 @@
                         }
                     }
                 },
-                flush(){
-                    this.randomPages=window.p;
+                flush() {
+                    this.randomPages = window.p;
                 }
                 ,
                 page_() {
@@ -152,13 +190,14 @@
         });
         app2.component('items', {
             template:
-                `<div class="page">host:{{hosts}}<div class="bold"><br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
+                `<div class="page" ">host:{{hosts}}<div class="bold"><br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
             ,
             props: ["tulpas", "hosts", "hosts", "introduction"]
             , emits: ['page_']
         });
         app2.mount("#randomPages")
         document.getElementById("randomPagesButton").click();
+    
     </script>
 </body>
 
