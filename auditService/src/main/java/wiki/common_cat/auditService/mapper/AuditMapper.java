@@ -1,8 +1,8 @@
-package wiki.commoncat.auditService.mapper;
+package wiki.common_cat.auditService.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import wiki.commoncat.auditService.entities.Doc;
-import wiki.commoncat.auditService.entities.User;
+import wiki.common_cat.auditService.entities.User;
+import wiki.common_cat.auditService.entities.Doc;
 
 @Mapper
 public interface AuditMapper {

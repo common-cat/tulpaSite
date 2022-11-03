@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>wiki.lplaform</groupId>
+    <groupId>wiki.common_cat</groupId>
     <artifactId>auditService</artifactId>
     <version>1.0.0</version>
 
@@ -85,40 +85,23 @@
     </dependencies>
     <build>
         <plugins>
-            <!--mybatis自动生成代码插件-->
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.4.0</version>
-                <configuration>
-                    <configurationFile>src/main/resources/mybatis-generator/generatorConfig.xml</configurationFile>
-                    <verbose>true</verbose>
-                    <!-- 是否覆盖，true表示会替换生成的JAVA文件，false则不覆盖 -->
-                    <overwrite>true</overwrite>
-                </configuration>
-                <dependencies>
-                    <!--mysql驱动包-->
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.16</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.mybatis.generator</groupId>
-                        <artifactId>mybatis-generator-core</artifactId>
-                        <version>1.4.0</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
     <parent>
-        <groupId>wiki.lplatform</groupId>
-        <artifactId>lplatform</artifactId>
+        <groupId>wiki.common_cat</groupId>
+        <artifactId>tulpa</artifactId>
         <version>1.0.0</version>
     </parent>
 </project>

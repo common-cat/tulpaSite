@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <!--继承主工程的 POM-->
     <parent>
-        <artifactId>lplatform</artifactId>
-        <groupId>wiki.lplatform</groupId>
+        <artifactId>tulpa</artifactId>
+        <groupId>wiki.common_cat</groupId>
         <version>1.0.0</version>
     </parent>
-    <groupId>wiki.lplatform</groupId>
+    <groupId>wiki.common_cat</groupId>
     <artifactId>eureka</artifactId>
         <version>1.0.0</version>
     <name>eureka</name>

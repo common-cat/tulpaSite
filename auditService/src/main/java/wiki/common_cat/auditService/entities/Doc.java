@@ -1,4 +1,4 @@
-package wiki.commoncat.auditService.entities;
+package wiki.common_cat.auditService.entities;
 
 public class Doc {
     //文档状态码

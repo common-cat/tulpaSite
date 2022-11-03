@@ -35,8 +35,8 @@
         <version>2.3.6.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>wiki.lplatform</groupId>
-    <artifactId>lplatform</artifactId>
+    <groupId>wiki.common_cat</groupId>
+    <artifactId>tulpa</artifactId>
     <version>1.0.0</version>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -67,16 +67,5 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <delimiters>
-                        <delimit>$</delimit>
-                    </delimiters>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 </project>

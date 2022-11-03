@@ -1,9 +1,9 @@
-package wiki.commoncat.auditService.controller;
+package wiki.common_cat.auditService.controller;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-import wiki.commoncat.auditService.service.AuditService;
+import wiki.common_cat.auditService.service.AuditService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

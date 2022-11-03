@@ -1,27 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="auditService:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335e7224-8262-4952-a506-1661a3709458" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/wiki/lplatform/api/InIDataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/impl/CommonEmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tool/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tool/src/main/java/wiki/common_cat/tool/InIDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tool/src/main/java/wiki/common_cat/tool/mapper/IniMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tool/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tool/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/auditService_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/wiki/lplatform/api/H.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auditService/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auditService/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gate/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logService/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainPageService/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/privatePageService/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/privatePageService/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/searchService/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sourceService/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tool/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/wiki/lplatform/api/H.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/wiki/lplatform/api/Redis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auditService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/controller/AuditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/controller/AuditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/mapper/AuditMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/mapper/AuditMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/impl/CommonAuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/impl/CommonAuditService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gate/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/logService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainPageService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/controller/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/controller/SignInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/impl/CommonSignInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/impl/CommonSignInService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privatePageService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/searchService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signinServcie/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signinServcie/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sourceService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tool/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +65,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/api/src/main/java/wiki/lplatform/api/H.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/signinServcie/src/main/resources/application.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/sourceService/src/main/resources/application.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/staticHTMLService/src/main/resources/mybatis/mapper/mainMapper.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tool/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tool/src/main/java/wiki/common_cat/tool/InIDatabase.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tool/src/main/java/wiki/common_cat/tool/mapper/IniMapper.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tool/src/main/resources/application.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tool/src/main/resources/mybatis/mapper/mainMapper.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -64,28 +99,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/Acer/Desktop/tulpasite/TulpaSite/tool/src/main/resources",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Desktop/tulpasite/TulpaSite/auditService/target&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\auditService\target" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\tool\src\main\resources" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\staticHTMLService\src\main\resources\mybatis\mapper" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\searchService\src\main\resources\mybatis\mapper" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\searchService\src\main\resources" />
-      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\signinServcie\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\out\artifacts\eureka" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\privatePageService\src\main\resources\mybatis" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\mainPageService\src\main\resources" />
     </key>
@@ -97,13 +133,13 @@
       <recent name="wiki.common_cat.tokenService.service" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.InIDatabase">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.staticHTMLService.Application" />
-      <module name="staticHTMLService" />
+  <component name="RunManager" selected="应用程序.wiki.common_cat.auditService.AuditApplication">
+    <configuration name="AuditApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.auditService.AuditApplication" />
+      <module name="auditService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wiki.common_cat.staticHTMLService.*" />
+          <option name="PATTERN" value="wiki.common_cat.auditService.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,12 +147,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InIDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.tool.InIDatabase" />
-      <module name="tool" />
+    <configuration name="wiki.common_cat.auditService.AuditApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.auditService.AuditApplication" />
+      <module name="auditService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wiki.common_cat.tool.*" />
+          <option name="PATTERN" value="wiki.common_cat.auditService.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,12 +162,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.searchService.SearchApplication" />
-      <module name="searchService" />
+    <configuration name="wiki.common_cat.euraka.CloudEureka" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.euraka.CloudEureka" />
+      <module name="eyreka" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wiki.common_cat.searchService.*" />
+          <option name="PATTERN" value="wiki.common_cat.euraka.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,39 +177,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignInApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.signinService.SignInApplication" />
-      <module name="signinServcie" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="wiki.common_cat.signinService.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="TulpaSite.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/audit/TulpaSite.jar" />
+      <method v="2" />
     </configuration>
-    <configuration name="wiki.common_cat.signinService.service.impl.EmailService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wiki.common_cat.signinService.service.impl.EmailService" />
-      <module name="signinServcie" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="wiki.common_cat.signinService.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="auditService.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/auditService_jar/auditService.jar" />
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.InIDatabase" />
-        <item itemvalue="应用程序.Application" />
-        <item itemvalue="应用程序.SignInApplication" />
-        <item itemvalue="应用程序.SearchApplication" />
-        <item itemvalue="应用程序.wiki.common_cat.signinService.service.impl.EmailService" />
+        <item itemvalue="应用程序.wiki.common_cat.auditService.AuditApplication" />
+        <item itemvalue="JAR 应用程序.auditService.jar" />
+        <item itemvalue="应用程序.AuditApplication" />
+        <item itemvalue="JAR 应用程序.TulpaSite.jar" />
+        <item itemvalue="应用程序.wiki.common_cat.euraka.CloudEureka" />
       </list>
     </recent_temporary>
   </component>

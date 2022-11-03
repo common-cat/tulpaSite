@@ -1,4 +1,4 @@
-package wiki.commoncat.auditService.service;
+package wiki.common_cat.auditService.service;
 
 public interface AuditService {
     void commit(String sessionID);
