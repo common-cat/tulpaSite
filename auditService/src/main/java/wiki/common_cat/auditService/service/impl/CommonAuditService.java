@@ -1,13 +1,14 @@
-package wiki.common_cat.auditService.service.impl;
+package wiki.commoncat.auditService.service.impl;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
-import wiki.common_cat.auditService.entities.Doc;
-import wiki.common_cat.auditService.entities.User;
-import wiki.common_cat.auditService.mapper.AuditMapper;
-import wiki.common_cat.auditService.service.AuditService;
+import wiki.commoncat.auditService.entities.Doc;
+import wiki.commoncat.auditService.entities.User;
+import wiki.commoncat.auditService.mapper.AuditMapper;
+import wiki.commoncat.auditService.service.AuditService;
+
 @Service("commonAuditService")
 public class CommonAuditService implements AuditService {
     @Autowired

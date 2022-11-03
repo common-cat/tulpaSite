@@ -1,4 +1,4 @@
-package wiki.common_cat.auditService.entities;
+package wiki.commoncat.auditService.entities;
 
 
 public class User {
