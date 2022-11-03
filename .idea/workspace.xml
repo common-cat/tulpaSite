@@ -5,74 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335e7224-8262-4952-a506-1661a3709458" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/SearchApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/controller/SearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/mapper/SearchMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/service/SearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/service/impl/CommonSearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searchService/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searchService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/SignInApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/controller/SignInController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/mapper/SignInMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/SignInService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/java/wiki/common_cat/signinService/service/impl/CommonSignInService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signinServcie/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/entities/Doc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/controller/AuditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/controller/AuditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/entities/Doc.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/entities/Doc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/mapper/AuditMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/mapper/AuditMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/AuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/AuditService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/impl/CommonAuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/java/wiki/common_cat/auditService/service/impl/CommonAuditService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auditService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auditService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gate/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gate/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/controller/LogServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/controller/LogServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/mapper/LogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/mapper/LogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/service/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/service/Res.java" beforeDir="false" afterPath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/service/Res.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/service/impl/CommonLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/logService/src/main/java/wiki/common_cat/logService/service/impl/CommonLogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/logService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/controller/PrivatePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/controller/PrivatePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/mapper/PrivatePageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/mapper/PrivatePageMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/service/PrivatePageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/service/PrivatePageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/service/impl/CommonPrivatePageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/java/wiki/common_cat/privatePageService/service/impl/CommonPrivatePageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privatePageService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/privatePageService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/searchService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/signinServcie/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signService/src/main/java/wiki/common_cat/signService/controller/SignController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/signService/src/main/java/wiki/common_cat/signService/mapper/SignMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/signService/src/main/resources/mapper/mainMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/controller/SourceServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/controller/SourceServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/entities/Doc.java" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/entities/Doc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/mapper/SourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/mapper/SourceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/service/SourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/service/SourceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/service/impl/SourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/java/wiki/common_cat/sourceService/service/impl/SourceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourceService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sourceService/src/main/resources/mybatis/mapper/mainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sourceService/src/main/resources/mybatis/mapper/mainMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/controller/MainPageServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageService/src/main/java/wiki/common_cat/mainPageService/controller/MainPageServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/service/impl/CommonSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/searchService/src/main/java/wiki/common_cat/searchService/service/impl/CommonSearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/signin.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/css/signin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/static/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/auditPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/auditPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/mapper/StaticMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/mapper/StaticMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/service/StaticHTMLService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/service/StaticHTMLService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/service/impl/CommonStaticHTMLService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/java/wiki/common_cat/staticHTMLService/service/impl/CommonStaticHTMLService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/loginPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/mainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/privatePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/privatePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/searchPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/searchPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/signinPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticHTMLService/src/main/resources/templates/signinPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,37 +60,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/Desktop/tulpasite/TulpaSite/searchService/src/main/resources/mybatis/mapper&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "C:/Users/Acer/Desktop/tulpasite/TulpaSite/staticHTMLService/src/main/resources/mybatis/mapper",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\staticHTMLService\src\main\resources\mybatis\mapper" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\searchService\src\main\resources\mybatis\mapper" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\searchService\src\main\resources" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\signinServcie\src\main\resources" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\auditService\src\main\resources" />
-      <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\privatePageService\src\main\java\wiki\common_cat\privatePageService\entities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\privatePageService\src\main\resources\mybatis" />
       <recent name="C:\Users\Acer\Desktop\tulpasite\TulpaSite\mainPageService\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="wiki.common_cat.staticHTMLService.entities" />
       <recent name="wiki.common_cat.searchService.entities" />
       <recent name="wiki.signinService.entities" />
       <recent name="wiki.common_cat.auditService.entities" />
       <recent name="wiki.common_cat.tokenService.service" />
-      <recent name="wiki.common_cat.logService.service" />
     </key>
   </component>
   <component name="RunManager" selected="应用程序.SearchApplication">
@@ -216,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Application" />
         <item itemvalue="应用程序.GatewayApplication" />
+        <item itemvalue="应用程序.Application" />
         <item itemvalue="应用程序.SearchApplication" />
         <item itemvalue="应用程序.SourceServiceApplication" />
         <item itemvalue="应用程序.SignInApplication" />

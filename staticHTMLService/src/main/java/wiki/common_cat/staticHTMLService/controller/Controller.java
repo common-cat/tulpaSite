@@ -2,6 +2,7 @@ package wiki.common_cat.staticHTMLService.controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import wiki.common_cat.staticHTMLService.entities.Doc;
 import wiki.common_cat.staticHTMLService.service.StaticHTMLService;
 
 import javax.annotation.Resource;
@@ -39,5 +40,12 @@ public class Controller {
     @GetMapping("/static/audit")
     public String audit(){
         return "auditPage";
+    }
+    @GetMapping("/static/page/{id}")
+    public String page(@PathVariable("id")String id,Model model){
+        Doc doc=service.getDoc(id);
+        model.addAttribute("title",doc.getAuthorID()+"的页面");
+        model.addAttribute("html",doc.getHTML());
+        return "page";
     }
 }

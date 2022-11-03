@@ -13,11 +13,6 @@ public class CommonSearchService implements SearchService {
     private SearchMapper mapper;
     @Override
     public String search(String q) {
-        User[] usrs=mapper.search("%"+q+"%");
-        String[] strs=new String[usrs.length];
-        for(int i=0;i< usrs.length;i++){
-            strs[i]=(new Gson()).toJson(usrs[i]);
-        }
-        return (new Gson()).toJson(strs);
+        return (new Gson()).toJson(mapper.search("%"+q+"%"));
     }
 }

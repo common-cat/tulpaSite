@@ -35,8 +35,8 @@
         <div id="searched" @click="searched"></div>
         <div class="button" id="last">上一页</div>
         <div class="button" id="next">下一页</div>
-        <div class="button" id="total">{{nowpage}}/{{totalage}}</div>
-        <pages id="pages" v-for="page in nows" :hosts="page.hosts" :tulpas="page.tulpas" :introduction="page.introduction" :id="page.id">
+        <div class="button" id="total">{{nowpage}}/{{totalpage}}</div>
+        <pages id="pages" v-for="page in nows" :hosts="page.hosts" :tulpas="page.tulpas" :introduction="page.introduction" :id="page.ID" @page_="page_(id)">
             
         </pages>
     </div>
@@ -46,7 +46,7 @@
             data(){
                 return{
                     nows:[],
-                    nowpage:0,
+                    nowpage:1,
                     nowIdx:0,
                     ps:[],
                     totalpage:0
@@ -54,6 +54,9 @@
             },
             methods:{
                 next(){
+                    if(this.nowpage==this.totalpage){
+                        return;
+                    }
                     if(this.nowpage<this.totalpage){
                         this.nowpage++;
                         this.nowIdx=0;
@@ -74,15 +77,19 @@
                     var r=window.answers;
                     this.totalpage=r.totalpage;
                     this.nows=window.answers;
+                    console.log(this.nows)
                     this.ps=r.ps;
-                    this.nowpage=0;
+                    this.nowpage=1;
                     this.totalpage=Math.ceil(r.length/pagesNum);
+                },
+                page_(id){
+                    window.open("/static/page/"+id);
                 }
             }
         })
         app.component('pages', {
             template:
-                `<div class="contents">host:{{hosts}}<div class="bold"><br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
+                `<div class="contents" @click="page_(id)"><div class="bold">host:{{hosts}}<br>tulpas:{{tulpas}}<hr></div>简介：{{introduction}}</div>`
             ,
             props: ["tulpas", "hosts", "hosts", "introduction"]
             , emits: ['page_']
