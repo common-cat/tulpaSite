@@ -8,9 +8,14 @@ import wiki.common_cat.auditService.entities.User;
 import wiki.common_cat.auditService.mapper.AuditMapper;
 import wiki.common_cat.auditService.entities.Doc;
 import wiki.common_cat.auditService.service.AuditService;
+import wiki.common_cat.auditService.service.EmailService;
+
+import javax.annotation.Resource;
 
 @Service("commonAuditService")
 public class CommonAuditService implements AuditService {
+    @Resource(name = "commonEmailService")
+    private EmailService emailService;
     @Autowired
     private AuditMapper mapper;
     private Jedis jedis=new Jedis("localhost");
@@ -23,12 +28,14 @@ public class CommonAuditService implements AuditService {
 
     @Override
     public void reject(int id) {
+        emailService.sendMessage("你提交"+mapper.getDoc(id).getDate()+"的花名册被拒绝了。","tulpa花名册审核结果",new String[]{(mapper.getEMailByID(id))});
         mapper.rejectDoc(Integer.valueOf(id));
     }
 
     @Override
     public void accept(int id) {
         Doc doc= mapper.getAuditingDoc(Integer.valueOf(id));
+        emailService.sendMessage("你提交"+doc.getDate()+"的花名册被通过了。","tulpa花名册审核结果",new String[]{(mapper.getEMailByID(id))});
         mapper.acceptDoc(doc.HTML,Integer.valueOf(id));
         mapper.delAuditDoc(Integer.valueOf(id));
     }

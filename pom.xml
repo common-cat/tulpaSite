@@ -11,12 +11,12 @@
         <module>staticHTMLService</module>
         <module>logService</module>
         <module>mainPageService</module>
-        <module>searchService</module>
         <module>sourceService</module>
         <module>auditService</module>
         <module>privatePageService</module>
         <module>signinServcie</module>
         <module>tool</module>
+        <module>searchService</module>
     </modules>
     <dependencies>
         <dependency>

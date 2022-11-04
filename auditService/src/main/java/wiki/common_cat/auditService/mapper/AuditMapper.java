@@ -13,6 +13,7 @@ public interface AuditMapper {
     void acceptDoc(String HTML,int id);
     void rejectDoc(int id);
     void delAuditDoc(int id);
+    String getEMailByID(int id);
     void auditDoc(String HTML,int id);
     Integer isAdmin(int id);
     int[] auditList();

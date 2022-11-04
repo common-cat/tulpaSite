@@ -1,0 +1,9 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.common_cat.searchService.mapper.SearchMapper">
+    <select id="search" resultType="wiki.common_cat.searchService.entities.User">
+        select * from userinfo where tulpas like #{q} OR hosts like #{q} AND isAudited=1
+    </select>
+</mapper>

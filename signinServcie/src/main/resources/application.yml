@@ -12,7 +12,7 @@ spring:
     name: signInService  #微服务名称，对外暴漏的微服务名称，十分重要
   ################################################## JDBC 通用配置  ##########################################
   datasource:
-    username: root        #数据库登陆用户名
+    username: tulpa       #数据库登陆用户名
     password: 123456        #数据库登陆密码
     url: jdbc:mysql://localhost:3306/tulpa?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false    #数据库url
     driver-class-name: com.mysql.cj.jdbc.Driver                  #数据库驱动
@@ -31,7 +31,8 @@ mybatis:
     map-underscore-to-camel-case: true
 mail:
   user: tulpa_lab@163.com
-  pwd: 
+  pwd: NMBUEPOXSQZZZPEF
   host: smtp.163.com
+  port: 25
 host:
-  host: localhost
+  host: 39.106.94.234

@@ -1,29 +1,16 @@
-package wiki.common_cat.signinService.service.impl;
+package wiki.common_cat.auditService.service.impl;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import wiki.common_cat.signinService.service.EmailService;
+import wiki.common_cat.auditService.service.EmailService;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.security.Security;
 import java.util.Properties;
-
-import javax.mail.BodyPart;
-
-import javax.mail.Message;
-
-import javax.mail.Multipart;
-
-import javax.mail.Session;
-
-import javax.mail.Transport;
-
-import javax.mail.internet.InternetAddress;
-
-import javax.mail.internet.MimeBodyPart;
-
-import javax.mail.internet.MimeMessage;
-
-import javax.mail.internet.MimeMultipart;
 
 
 @Service("commonEmailService")

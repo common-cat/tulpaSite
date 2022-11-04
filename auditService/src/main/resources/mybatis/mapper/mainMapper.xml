@@ -33,4 +33,7 @@
     <select id="getUserInfo" resultType="wiki.common_cat.auditService.entities.User">
         select * from userinfo where id=${id};
     </select>
+    <select id="getEMailByID" resultType="string">
+        select email from users where id=#{id};
+    </select>
 </mapper>

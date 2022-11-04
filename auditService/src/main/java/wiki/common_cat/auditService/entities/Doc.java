@@ -1,7 +1,8 @@
 package wiki.common_cat.auditService.entities;
 
 public class Doc {
-    //文档状态码
+    //文档状态
+    // 码
     public String HTML;
     //文章内容
     public int id;
