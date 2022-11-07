@@ -38,6 +38,6 @@ mail:
   user: tulpa_lab@163.com
   pwd: NMBUEPOXSQZZZPEF
   host: smtp.163.com
-  port: 25
+  port: 465
 host:
-  host: 39.106.94.234
+  host: www.lplatform.wiki

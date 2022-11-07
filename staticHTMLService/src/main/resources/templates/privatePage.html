@@ -13,6 +13,17 @@
     <script src="/src/js/vue_.js"></script>
     <script src="/src/js/login.js"></script>
     <script src="/src/js/main.js"></script>
+    <script>
+        if(isPhone()){
+            loadStyle("/src/css/main-phone.css");
+            loadStyle("/src/css/login-phone.css");
+            loadStyle("/src/css/private-phone.css");
+        }else{
+            loadStyle("/src/css/main.css");
+            loadStyle("/src/css/login.css");
+            loadStyle("/src/css/private.css");
+        }
+    </script>
     <h1 th:text="${title}"></h1>
     <hr>
     <div id="info" class="contents">

@@ -1,0 +1,26 @@
+.info{
+    border-radius: 5px;
+    border-width: 0;
+    background-color: whitesmoke;
+    padding: 5px;
+    margin: 20px;
+    color: rgb(109, 109, 109);
+}
+#tulpas{
+    min-width: 500px;
+    height: 80px;
+    font-size: 35pt;
+
+}
+#hosts{
+    min-width: 500px;
+    height: 80px;
+    font-size: 35pt;
+
+}
+#introduction{
+    min-width: 500px;
+    min-height: 500px;
+    font-size: 20pt;
+
+}

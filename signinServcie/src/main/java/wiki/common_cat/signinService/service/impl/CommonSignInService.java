@@ -26,7 +26,7 @@ public class CommonSignInService implements SignInService {
         if(mapper.getIDByEmail(email)!=null){
             return "existing";
         }
-        String url="sign@"+String.valueOf(email.hashCode()+(new Random().nextInt()));
+        String url="sign@"+String.valueOf(email.hashCode()+Math.abs((new Random().nextInt())));
         jedis.set(url,email);
         mapper.delPreUser(email);
         mapper.addPreUser(email, salt, (pwd+salt).hashCode(), tulpas, hosts);
@@ -42,7 +42,7 @@ public class CommonSignInService implements SignInService {
         }
         jedis.del(url);
         User preUser=mapper.getPreUser(email);
-        mapper.addUser(preUser.getSalt(), preUser.getPwdhash());
+        mapper.addUser(preUser.getSalt(), preUser.getPwdhash(),email);
         int id=mapper.getID();
         mapper.addDoc(id);
         System.out.println("id-sign-success:"+id);

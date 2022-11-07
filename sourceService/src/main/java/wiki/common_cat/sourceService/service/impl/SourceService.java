@@ -28,7 +28,7 @@ public class SourceService implements wiki.common_cat.sourceService.service.Sour
             realID=jedis.get(sessionID);
         }catch (Exception e){
         }
-        Doc doc=sourceMapper.getDoc(Integer.parseInt(realID));
+        Doc doc=sourceMapper.getDoc(Integer.parseInt(id));
         try{
         if(realID.equals(id)||((sourceMapper.isAdmin(Integer.valueOf(realID))!=null))){
             return (new Gson()).toJson(doc);

@@ -5,14 +5,21 @@
 <head>
     <meta charset="UTF-8">
     <title>搜索</title>
-    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
-    <link th:href="@{/src/css/search.css}" type="text/css" rel="stylesheet">
 </head>
 
 <body>
     <script src="/src/js/vue_.js"></script>
     <script src="/src/js/login.js"></script>
     <script src="/src/js/main.js"></script>
+    <script>
+        if(isPhone()){
+            loadStyle("/src/css/main-phone.css");
+            loadStyle("/src/css/search-phone.css");
+        }else{
+            loadStyle("/src/css/main.css");
+            loadStyle("/src/css/search.css");
+        }
+    </script>
     <div id="q" th:text="${q}" style="display: none;"></div>
     <script>
         function searched() {

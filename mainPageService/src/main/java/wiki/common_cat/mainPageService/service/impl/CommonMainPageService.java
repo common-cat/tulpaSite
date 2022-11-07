@@ -12,10 +12,14 @@ public class CommonMainPageService implements MainPageService {
     private MainPageMapper mapper;
     @Override
     public String randomPages(int pages) {
-        String[] ids=mapper.getRandomDocs(pages);
+        int[] ids_=mapper.getRandomDocs(pages);
+        int[] ids=new int[ids_.length];
+        for (int i=0;i<ids.length;i++){
+            ids[i]=ids_[i];
+        }
         User[] users=new User[ids.length];
         for(int i=0;i< ids.length;i++){
-            users[i]=mapper.getUserInfo(Integer.parseInt(ids[i]));
+            users[i]=mapper.getUserInfo(ids[i]);
         }
         return (new Gson()).toJson(users);
     }

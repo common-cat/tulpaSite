@@ -3,6 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="wiki.common_cat.auditService.mapper.AuditMapper">
+    <delete id="delAuditedDoc">
+        delete from audited_doc where id=#{id}
+    </delete>
     <select id="getDoc" resultType="wiki.common_cat.auditService.entities.Doc">
         select * from doc where id=#{id}
     </select>
@@ -19,9 +22,10 @@
         DELETE FROM auditing_doc WHERE id=#{id}
     </delete>
     <insert id="auditDoc">
-        insert into auditing_doc (HTML,id,date) values (#{HTML},#{id},NOW())
+        insert into auditing_doc (HTML,id,date) values ("",#{id},NOW())
     </insert>
     <insert id="acceptDoc">
+        update userinfo set isAudited=1 where id=#{id};
         insert into audited_doc (HTML,id,date) values (#{HTML},#{id},NOW())
     </insert>
     <select id="isAdmin" resultType="int">

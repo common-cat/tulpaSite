@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${title}"></title>
-    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -13,10 +12,18 @@
     <script src="/src/js/vue_.js"></script>
     <script src="/src/js/login.js"></script>
     <script src="/src/js/main.js"></script>
+    <script>
+        if(isPhone()){
+            loadStyle("/src/css/main-phone.css");
+        }else{
+            loadStyle("/src/css/main.css");
+        }
+    </script>
     <div id="main">
         <div id="html"></div>
         <div id="accept" class="button" @click="accept">通过</div>
         <div id="reject" class="button" @click="reject">拒绝</div>
+        <textarea id="comment" class="contents" style="min-width:500px;width: 60%;margin-left: 20px;" v-model="comment"></textarea>
         <div id="d" @click="downloaded"></div>
     </div>
     <script>
@@ -24,7 +31,7 @@
         var app = Vue.createApp({
             data() {
                 return {
-                    
+                    comment: ""
                 }
             },
             methods: {
@@ -37,7 +44,7 @@
                             alert("已通过");
                         }
                     }
-                    ajax.send("sessionID=" + getSessionID());
+                    ajax.send("sessionID=" + getSessionID()+"&comment="+this.comment);
                 }
                 ,
                 reject() {
@@ -49,7 +56,7 @@
                             alert("已拒绝");
                         }
                     }
-                    ajax.send("sessionID=" + getSessionID());
+                    ajax.send("sessionID=" + getSessionID()+"&comment="+this.comment);
                 }
                 ,
                 downloaded() {
@@ -63,7 +70,7 @@
         }
         function download() {
             ajax = new XMLHttpRequest();
-            ajax.open('GET', '/source/doc/' + getID() + "?sessionID=" + getSessionID(), true);
+            ajax.open('GET', '/source/doc/' + id + "?sessionID=" + getSessionID(), true);
             ajax.onreadystatechange = function () {
                 if (ajax.readyState == 4) {
                     if (ajax.responseText == "401") {

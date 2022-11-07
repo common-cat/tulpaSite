@@ -19,13 +19,13 @@ public class AuditController {
     @PostMapping("/audit/reject/{id}")
     public void reject(HttpServletRequest httpServletRequest,@PathVariable("id")String id){
         if(service.isAdmin(httpServletRequest.getParameter("sessionID"))){
-            service.reject(Integer.valueOf(id));
+            service.reject(Integer.valueOf(id),httpServletRequest.getParameter("comment"));
         }
     }
     @PostMapping("/audit/accept/{id}")
     public void accept(HttpServletRequest httpServletRequest,@PathVariable("id")String id){
         if(service.isAdmin(httpServletRequest.getParameter("sessionID"))){
-            service.accept(Integer.valueOf(id));
+            service.accept(Integer.valueOf(id),httpServletRequest.getParameter("comment"));
         }
     }
     @PostMapping("/audit/aduitlist")

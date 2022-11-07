@@ -3,10 +3,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="wiki.common_cat.mainPageService.mapper.MainPageMapper">
-    <select id="getRandomDocs" resultType="string">
+    <select id="getRandomDocs" resultType="int">
         select id from audited_doc WHERE id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM audited_doc))) ORDER BY id LIMIT ${pages}
     </select>
     <select id="getUserInfo" resultType="wiki.common_cat.mainPageService.entities.User">
         select * from userinfo where id=${id};
+    </select>
+    <select id="getID" resultType="int">
+        select id from audited_doc where id=${id_};
     </select>
 </mapper>

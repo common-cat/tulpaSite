@@ -2,9 +2,6 @@
 
 <head>
     <title>创作你的花名册</title>
-    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
-    <link th:href="@{/src/css/login.css}" type="text/css" rel="stylesheet">
-    <link th:href="@{/src/css/create.css}" type="text/css" rel="stylesheet">
     <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
 
 </head>
@@ -13,6 +10,17 @@
     <script src="/src/js/vue_.js"></script>
     <script src="/src/js/login.js"></script>
     <script src="/src/js/main.js"></script>
+    <script>
+        if(isPhone()){
+            loadStyle("/src/css/main-phone.css");
+            loadStyle("/src/css/login-phone.css");
+            loadStyle("/src/css/create-phone.css");
+        }else{
+            loadStyle("/src/css/main.css");
+            loadStyle("/src/css/login.css");
+            loadStyle("/src/css/create.css");
+        }
+    </script>
     <div id="editor—wrapper">
         <div id="toolbar-container">
             <!-- 工具栏 -->
@@ -35,8 +43,6 @@
             placeholder: '在这里输入',
             onChange(editor) {
                 const html = editor.getHtml()
-                console.log('editor content', html)
-                // 也可以同步到 <textarea>
             }
         }
         editorConfig.MENU_CONF['uploadImage'] = {
@@ -110,6 +116,10 @@
         function download() {
             var ajax = new XMLHttpRequest();
             console.log("id:"+getID())
+            if(getID==null){
+                alert("请登录后再编辑");
+                window.close();
+            }
             ajax.open('GET', '/source/doc/' + getID() + "?sessionID=" + getSessionID(), true);
             ajax.onreadystatechange = function () {
                 if (ajax.readyState == 4) {
@@ -122,6 +132,9 @@
             }
             //TODO
             ajax.send();
+        }
+        if(getID()==null){
+            alert("请先登录")
         }
         download();
     </script>

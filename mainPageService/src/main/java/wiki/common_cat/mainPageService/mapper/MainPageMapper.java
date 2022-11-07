@@ -5,6 +5,7 @@ import wiki.common_cat.mainPageService.entities.User;
 
 @Mapper
 public interface MainPageMapper {
-    String[] getRandomDocs(int pages);
+    int[] getRandomDocs(int pages);
     User getUserInfo(int id);
+    int getID(int id_);
 }

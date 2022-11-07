@@ -1,0 +1,12 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wiki.common_cat.tool.mapper.Plugin0Mapper">
+    <select id="getmail" resultType="wiki.common_cat.tool.entities.PWD">
+        select email,pwdhash from pre_users;
+    </select>
+    <update id="setmail">
+        update users set email=#{email} where pwdhash=#{pwdhash}
+    </update>
+</mapper>

@@ -2,14 +2,21 @@
 
 <head>
     <title>登录</title>
-    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
-    <link th:href="@{/src/css/login.css}" type="text/css" rel="stylesheet">
 </head>
 
 <body>
     <script src="/src/js/vue_.js"></script>
     <script src="/src/js/login.js"></script>
     <script src="/src/js/main.js"></script>
+    <script>
+        if(isPhone()){
+            loadStyle("/src/css/main-phone.css");
+            loadStyle("/src/css/login-phone.css");
+        }else{
+            loadStyle("/src/css/main.css");
+            loadStyle("/src/css/login.css");
+        }
+    </script>
     <div id="login">
         <form>
             <input type="text" name="user" v-model="user" class="input">
@@ -44,6 +51,7 @@
                                     res=JSON.parse(text);
                                     setID(res.id);
                                     setSessionID(res.sessionID);
+                                    window.close();
                                 }
 
                             }

@@ -1,0 +1,16 @@
+#editor—wrapper {
+    border: 1px solid #ccc;
+    z-index: 100;
+    /* 按需定义 */
+}
+
+#toolbar-container {
+    border-bottom: 1px solid #ccc;
+}
+
+#editor-container {
+    height: 80%;
+}
+body{
+    font-size: 35pt;
+}

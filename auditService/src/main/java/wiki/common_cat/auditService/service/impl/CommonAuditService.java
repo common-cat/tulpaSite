@@ -23,20 +23,21 @@ public class CommonAuditService implements AuditService {
     public void commit(String sessionID) {
         Doc srcDoc= mapper.getDoc(Integer.valueOf(jedis.get(sessionID)));
         mapper.delAuditDoc(srcDoc.getId());
-        mapper.auditDoc(srcDoc.HTML,srcDoc.getId());
+        mapper.auditDoc(srcDoc.getId());
     }
 
     @Override
-    public void reject(int id) {
-        emailService.sendMessage("你提交"+mapper.getDoc(id).getDate()+"的花名册被拒绝了。","tulpa花名册审核结果",new String[]{(mapper.getEMailByID(id))});
+    public void reject(int id,String comment) {
+        emailService.sendMessage("你提交"+mapper.getDoc(id).getDate()+"的花名册被拒绝了。 建议："+comment,"tulpa花名册审核结果",new String[]{(mapper.getEMailByID(id))});
         mapper.rejectDoc(Integer.valueOf(id));
     }
 
     @Override
-    public void accept(int id) {
+    public void accept(int id,String comment) {
         Doc doc= mapper.getAuditingDoc(Integer.valueOf(id));
-        emailService.sendMessage("你提交"+doc.getDate()+"的花名册被通过了。","tulpa花名册审核结果",new String[]{(mapper.getEMailByID(id))});
-        mapper.acceptDoc(doc.HTML,Integer.valueOf(id));
+        emailService.sendMessage("你提交"+doc.getDate()+"的花名册被通过了。建议：+comment","tulpa花名册审核结果。 ",new String[]{(mapper.getEMailByID(id))});
+        mapper.delAuditDoc(id);
+        mapper.acceptDoc(mapper.getDoc(id).getHTML(),Integer.valueOf(id));
         mapper.delAuditDoc(Integer.valueOf(id));
     }
 

@@ -14,8 +14,9 @@ public interface AuditMapper {
     void rejectDoc(int id);
     void delAuditDoc(int id);
     String getEMailByID(int id);
-    void auditDoc(String HTML,int id);
+    void auditDoc(int id);
     Integer isAdmin(int id);
+    void delAudited(int id);
     int[] auditList();
     Integer existAuditDoc();
 }

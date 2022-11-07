@@ -1,0 +1,26 @@
+#login{
+    min-width: 400px;
+    min-height: 300px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+    width: 40%;
+    height: 40%;
+    position: relative;
+    left: 30%;
+    top:30%;
+}
+.button_{
+    background-color:rgb(139, 229, 254);
+    border-radius: 5px;
+    padding:5px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 35pt;
+    margin-left: 10%;
+}
+.textTitle{
+    font-size: 40pt;
+}

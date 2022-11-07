@@ -13,7 +13,7 @@
         delete from pre_users where email=#{email}
     </delete>
     <insert id="addUser">
-        insert into users (date,salt,pwdhash,lastLoginDate,status,loginTimes) values (NOW(),#{salt},#{pwdhash},NOW(),0,0);
+        insert into users (date,salt,pwdhash,lastLoginDate,status,loginTimes,email) values (NOW(),#{salt},#{pwdhash},NOW(),0,0,#{email});
     </insert>
     <select id="getID" resultType="int">
         SELECT LAST_INSERT_ID();

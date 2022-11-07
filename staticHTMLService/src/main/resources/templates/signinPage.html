@@ -13,6 +13,17 @@
     <script src="/src/js/vue_.js"></script>
     <script src="/src/js/login.js"></script>
     <script src="/src/js/main.js"></script>
+    <script>
+        if(isPhone()){
+            loadStyle("/src/css/main-phone.css");
+            loadStyle("/src/css/login-phone.css");
+            loadStyle("/src/css/signin-phone.css");
+        }else{
+            loadStyle("/src/css/main.css");
+            loadStyle("/src/css/login.css");
+            loadStyle("/src/css/sign-phone.css");
+        }
+    </script>
     <div class="contents" id="main">
         <h4>邮箱</h4>
         <input type="text"  class="input" v-model="email">
@@ -24,7 +35,7 @@
         <input type="text" v-model="hosts" class="input">
         <h4>TULPAs(以逗号分隔)</h4>
         <input type="text" id="tulpas" v-model="tulpas" class="input"><br>
-        <div class="button" @click="submit()">提交</div>
+        <div class="button_" @click="submit()">提交</div>
     </div>
     <script>
         var app=Vue.createApp({
@@ -59,7 +70,7 @@
                     ajax.send("email="+this.email+"&pwd="+this.pwd+"&repwd="+this.repwd+"&hosts="+this.hosts+"&tulpas="+this.tulpas);
                     ajax.onreadystatechange = function () {
                             if (ajax.readyState == 4) {
-                                alert("成功提交！")
+                                alert("成功提交 请关注你的邮箱 我们将会发送确认邮件！")
                                 window.close();
                             }
                         }

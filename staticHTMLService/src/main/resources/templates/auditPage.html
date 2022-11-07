@@ -5,13 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <title>审核</title>
-    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
 </head>
 
 <body>
     <script src="/src/js/vue_.js"></script>
     <script src="/src/js/login.js"></script>
     <script src="/src/js/main.js"></script>
+    <script>
+        if(isPhone()){
+            loadStyle("/src/css/main-phone.css");
+        }else{
+            loadStyle("/src/css/main.css");
+        }
+    </script>
     <script>
         function downloaded() {
             document.getElementById("downloaded").click();

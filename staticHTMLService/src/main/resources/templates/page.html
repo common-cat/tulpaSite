@@ -1,8 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <link th:href="@{/src/css/main.css}" type="text/css" rel="stylesheet">
-    <link th:href="@{/src/css/login.css}" type="text/css" rel="stylesheet">
     <title th:text="${title}"></title>
 </head>
 
@@ -10,6 +8,15 @@
 <script src="/src/js/vue_.js"></script>
 <script src="/src/js/login.js"></script>
 <script src="/src/js/main.js"></script>
+<script>
+    if(isPhone()){
+        loadStyle("/src/css/main-phone.css");
+        loadStyle("/src/css/login-phone.css");
+    }else{
+        loadStyle("/src/css/main.css");
+        loadStyle("/src/css/login.css");
+    }
+</script>
 <div th:utext="${html}"></div>
 </body>
 
